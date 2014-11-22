@@ -1,0 +1,134 @@
+body .icon {
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    cursor: pointer;
+    margin: -20px;
+}
+body .icon i {
+    width: 2px;
+    height: 14px;
+    background: #786699;
+    display: block;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 19px;
+    position: absolute;
+    top: 13px;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    -ms-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+}
+body .icon i:after {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 2px;
+    background: #786699;
+    position: absolute;
+    left: -6px;
+    top: 6px;
+}
+body .icon:after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    -webkit-box-shadow: 14px 0px 0px #fff, -14px 0px 0px #fff;
+    box-shadow: 14px 0px 0px #fff, -14px 0px 0px #fff;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+body .icon:before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    -webkit-transform: scale(0.25);
+    -moz-transform: scale(0.25);
+    -o-transform: scale(0.25);
+    -ms-transform: scale(0.25);
+    transform: scale(0.25);
+    background: #fff;
+    position: absolute;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    -ms-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+}
+body .icon.active:before {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+body .icon.active:after {
+    -webkit-box-shadow: 0px 0px 0px #fff, 0px 0px 0px #fff;
+    box-shadow: 0px 0px 0px #fff, 0px 0px 0px #fff;
+    opacity: 0.4;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=40);
+}
+body .icon.active i {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+}
+body .tap {
+    width: 80px;
+    height: 80px;
+    display: block;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    background-color: rgba(255,255,255,0.6);
+}
+body .tap.active {
+    -webkit-transition: all 400ms cubic-bezier(0, 0.7, 0.5, 1);
+    -moz-transition: all 400ms cubic-bezier(0, 0.7, 0.5, 1);
+    -o-transition: all 400ms cubic-bezier(0, 0.7, 0.5, 1);
+    -ms-transition: all 400ms cubic-bezier(0, 0.7, 0.5, 1);
+    transition: all 400ms cubic-bezier(0, 0.7, 0.5, 1);
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
