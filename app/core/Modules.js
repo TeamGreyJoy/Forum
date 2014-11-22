@@ -15,6 +15,14 @@ var Modules = (function () {
             return this.constructor.name.toLowerCase();
         }
 
+        ModuleAbstract.prototype.render = function(url, type) {
+            if (type == 'GET') {
+                Ajax.appendGet(url, this);
+            } else {
+                Ajax.appendPost(url, this);
+            }
+        }
+
         ModuleAbstract.prototype.getPattern = function() {
             return this._pattern;
         }
@@ -38,10 +46,19 @@ var Modules = (function () {
         return Category;
     }());
 
+    var Answers = (function () {
+        function Answers() { ModuleAbstract.call(this, []); }
+        Answers.inherit(ModuleAbstract);
+        Answers.prototype._pattern = "/question/:id";
+
+        return Answers;
+    }());
+
     return {
         ModuleAbstract: ModuleAbstract,
         Question: Question,
-        Category: Category
+        Category: Category,
+        Answers: Answers
     }
 
 }());
