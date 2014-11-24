@@ -14,28 +14,8 @@ var Ajax = (function ($) {
         }).success(callback);
     }
 
-    var get = function(url, callback) {
-        call(url, 'GET', callback);
-    }
-
-    var post = function(url, callback) {
-        call(url, 'POST', callback);
-    }
-
-    var appendGet = function(url, template) {
-        get(url, function(data) {Template.render(template, data.results)});
-    }
-
-    var appendPost = function(url, template) {
-        post(url, function(data) {Template.render(template, data.results)});
-    }
-
     return {
         call: call,
-        get: get,
-        post: post,
-        appendGet: appendGet,
-        appendPost: appendPost
     }
 
 }(jQuery));

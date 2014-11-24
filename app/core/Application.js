@@ -26,7 +26,6 @@ $(document).ready(function() {
 
     var __coreModules = [
         "Template",
-        "Modules",
         "Ajax"
     ];
 
