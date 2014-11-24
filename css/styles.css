@@ -1,0 +1,111 @@
+body {
+    background-color: #f9f9f9;
+    font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout: none;
+}
+
+body #wrapper{
+    width: 85%;
+    margin: 0 auto;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.04);
+}
+body #wrapper>header{
+    background-color: #5264AE;
+    width: 100%;
+    height: 150px;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.07);
+}
+
+body #wrapper header>h3{
+    font-weight: normal;
+    color: #ffffff;
+    line-height: 55px;
+    font-size: 1.8em;
+    padding: 0 30px;
+    position: relative;
+    top: 90px;
+
+}
+
+.menu {
+    display: inline-block;
+    width: 20%;
+    background-color: #fff;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.1);
+}
+
+.item {
+    position: relative;
+    height: 60px;
+    line-height: 60px;
+    color: #646464;
+    font-size: 1.1em;
+    -webkit-transition: box-shadow 400ms; /* For Safari 3.1 to 6.0 */
+    transition: box-shadow 400ms;
+}
+
+.item:hover{
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.15);
+    /*background-color: #F0F0F0;*/
+    cursor: pointer;
+}
+
+.label {
+    padding: 0 30px;
+}
+
+body #wrapper>main{
+    position: relative;
+    width: 60%;
+    height: auto;
+    background-color: #ffffff;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.13);
+    left: 20%;
+    bottom: 600px;
+}
+
+body #wrapper>main>header>h2{
+    font-weight: normal;
+    color: #5264AE;
+    padding: 20px 16px;
+}
+
+body #wrapper>main #content{
+    padding: 30px;
+}
+
+body #wrapper>main #content section{
+    display: inline-block;
+    width: 93%;
+    padding: 10px 16px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    height: auto;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.15);
+    color: #F1F1F1;
+    position: relative;
+    -webkit-transition: box-shadow 400ms; /* For Safari 3.1 to 6.0 */
+    transition: box-shadow 400ms;
+}
+
+body #wrapper>main #content section:hover {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.5);
+
+}
+
+body #wrapper>main #content section h2{
+    position: relative;
+    font-weight: normal;
+}
+
+body #wrapper main #content section div.actionButtonContainter{
+    position: relative;
+    float: right;
+    bottom: 150px;
+    right: 30px;
+}

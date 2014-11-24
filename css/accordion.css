@@ -1,0 +1,19 @@
+body #wrapper>main #content section{
+    max-height: 5em;
+    overflow: hidden;
+    transition: 500ms;
+}
+
+body #wrapper>main #content section p{
+    opacity: 0;
+    transition: opacity 800ms;
+}
+
+body #wrapper>main #content section.hovered{
+    max-height:999px;
+}
+
+body #wrapper>main #content section.hovered p{
+    visibility: visible;
+    opacity: 1;
+}
