@@ -3,17 +3,23 @@
 <head lang="en">
     <meta charset="UTF-8">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,900' rel='stylesheet' type='text/css'>
-    <link type="text/css" rel="stylesheet" href="styles.css"/>
-    <link type="text/css" rel="stylesheet" href="actionButtonCSS.css"/>
-    <link type="text/css" rel="stylesheet" href="accordion.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/styles.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/actionButtonCSS.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/accordion.css"/>
     <link rel="import" href="http://www.polymer-project.org/components/paper-ripple/paper-ripple.html">
     <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
     <link rel="import" href="http://www.polymer-project.org/components/font-roboto/roboto.html">
 
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="jquery-min.js"></script>
-    <script src="sectionColors.js"></script>
-    <script src="actionButton.js"></script>
+    <script src="../app/scripts/sectionColors.js"></script>
+    <script src="../app/scripts/actionButton.js"></script>
+    <script src="../app/scripts/loadQuestions.js"></script>
+
+    <link rel="stylesheet/less" href="../templates/loginForm/css-less/styles.less" type="text/css" />
+    <link rel="stylesheet/less" href="../templates/loginForm/css-less/forms.less" type="text/css" />
+    <script src="../templates/loginForm/scripts/less.min.js"></script>
+    <script src="../templates/loginForm/scripts/jquery-min.js"></script>
+    <script src="../app/scripts/loadLoginForm.js"></script>
     <title>Example Template</title>
 </head>
 <body>
@@ -24,111 +30,47 @@
 
         <aside class="menu">
             <div class="item">
-                <div class="label" fit>Lorem Ipsum</div>
+                <div class="label-aside" fit>Lorem Ipsum</div>
                 <paper-ripple fit></paper-ripple>
             </div>
             <div class="item">
-                <div class="label" fit>Lorem Ipsum</div>
+                <div class="label-aside" fit>Lorem Ipsum</div>
                 <paper-ripple fit></paper-ripple>
             </div>
             <div class="item">
-                <div class="label" fit>Lorem Ipsum</div>
+                <div class="label-aside" fit>Lorem Ipsum</div>
                 <paper-ripple fit></paper-ripple>
             </div>
             <div class="item">
-                <div class="label" fit>Lorem Ipsum</div>
+                <div class="label-aside" fit>Lorem Ipsum</div>
                 <paper-ripple fit></paper-ripple>
             </div>
             <div class="item">
-                <div class="label" fit>Lorem Ipsum</div>
+                <div class="label-aside" fit>Lorem Ipsum</div>
                 <paper-ripple fit></paper-ripple>
             </div>
             <div class="item">
-                <div class="label" fit>Lorem Ipsum</div>
+                <div class="label-aside" fit>Lorem Ipsum</div>
                 <paper-ripple fit></paper-ripple>
             </div>
             <div class="item">
-                <div class="label" fit>Lorem Ipsum</div>
+                <div class="label-aside" fit>Lorem Ipsum</div>
                 <paper-ripple fit></paper-ripple>
             </div>
             <div class="item">
-                <div class="label" fit>Lorem Ipsum</div>
+                <div class="label-aside" fit>Lorem Ipsum</div>
                 <paper-ripple fit></paper-ripple>
             </div>
         </aside>
 
         <main>
-            <header>
-                <h2>Category name</h2>
-            </header>
-            <section id="content" class="accordion vertical">
-                <section class="changeColor">
-                    <h2 fit>Lorem Ipsum Lorem Ipsum Lorem Ipsum ?</h2>
-                    <paper-ripple fit></paper-ripple>
-                    <p>Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
-                    <p>Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
-                    <p>Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
-                    <div class="actionButtonContainter">
-                        <div class="icon">
-                            <i></i>
-                            <span class="tap"></span>
-                        </div>
-                    </div>
-                </section>
-                <section class="changeColor">
-                    <h2 fit>Lorem Ipsum Lorem Ipsum Lorem Ipsum ?</h2>
-                    <paper-ripple fit></paper-ripple>
-                    <p>Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
-                    <p>Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
-                    <p>Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
-                    <div class="actionButtonContainter">
-                        <div class="icon">
-                            <i></i>
-                            <span class="tap"></span>
-                        </div>
-                    </div>
-                </section>
-                <section class="changeColor">
-                    <h2 fit>Lorem Ipsum Lorem Ipsum Lorem Ipsum ?</h2>
-                    <paper-ripple fit></paper-ripple>
-                    <p>Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
-                    <p>Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
-                    <p>Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
-                    <div class="actionButtonContainter">
-                        <div class="icon">
-                            <i></i>
-                            <span class="tap"></span>
-                        </div>
-                    </div>
-                </section>
-                <section class="changeColor">
-                    <h2 fit>Lorem Ipsum Lorem Ipsum Lorem Ipsum ?</h2>
-                    <paper-ripple fit></paper-ripple>
-                    <p>Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
-                    <p>Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
-                    <p>Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
-                    <div class="actionButtonContainter">
-                        <div class="icon">
-                            <i></i>
-                            <span class="tap"></span>
-                        </div>
-                    </div>
-                </section>
-                <section class="changeColor">
-                    <h2 fit>Lorem Ipsum Lorem Ipsum Lorem Ipsum ?</h2>
-                    <paper-ripple fit></paper-ripple>
-                    <p>Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
-                    <p>Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
-                    <p>Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
-                    <div class="actionButtonContainter">
-                        <div class="icon">
-                            <i></i>
-                            <span class="tap"></span>
-                        </div>
-                    </div>
-                </section>
+            <section id="content" class="accordion">
+
             </section>
         </main>
     </div>
+    <footer>
+
+    </footer>
 </body>
 </html>

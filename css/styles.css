@@ -1,3 +1,8 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     background-color: #f9f9f9;
     font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
@@ -11,7 +16,9 @@ body {
 
 body #wrapper{
     width: 85%;
+    height: 900px;
     margin: 0 auto;
+    margin-top: -30px;
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.04);
 }
 body #wrapper>header{
@@ -55,18 +62,19 @@ body #wrapper header>h3{
     cursor: pointer;
 }
 
-.label {
+.label-aside {
     padding: 0 30px;
 }
 
 body #wrapper>main{
-    position: relative;
+    position: absolute;
     width: 60%;
-    height: auto;
+    height: 850px;
+    overflow: hidden;
     background-color: #ffffff;
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.13);
     left: 20%;
-    bottom: 600px;
+    top: 70px;
 }
 
 body #wrapper>main>header>h2{
@@ -98,14 +106,33 @@ body #wrapper>main #content section:hover {
 
 }
 
-body #wrapper>main #content section h2{
+body #wrapper>main #content section header{
+    width: 100%;
+}
+
+body #wrapper>main #content section header h2{
+    display: inline-block;
     position: relative;
+    width: 90%;
     font-weight: normal;
 }
 
-body #wrapper main #content section div.actionButtonContainter{
+body #wrapper>main #content section header h3{
+    display: inline-block;
+    position: absolute;
+}
+
+body #wrapper main #content section header h3 div.actionButtonContainter{
     position: relative;
-    float: right;
-    bottom: 150px;
-    right: 30px;
+    bottom: 90px;
+    left: 25px;
+    z-index: 1;
+}
+
+body footer{
+    width: 85%;
+    margin: 0 auto;
+    background-color: #5264AE;
+    height: 150px;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.07);
 }

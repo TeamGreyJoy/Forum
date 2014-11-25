@@ -14,6 +14,5 @@ body #wrapper>main #content section.hovered{
 }
 
 body #wrapper>main #content section.hovered p{
-    visibility: visible;
     opacity: 1;
 }
