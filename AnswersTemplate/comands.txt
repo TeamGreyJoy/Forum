@@ -1,0 +1,8 @@
+//9vyCnP0hNYFoB9AY7JfIwRwVoSB05sTWhgS2C0eF
+//WVXj97eFDoQSH3UaLOBmkWxaiIThYxpzx4h50dNN
+//curl -X POST \
+//-H "X-Parse-Application-Id: 9vyCnP0hNYFoB9AY7JfIwRwVoSB05sTWhgS2C0eF" \
+//-H "X-Parse-REST-API-Key: WVXj97eFDoQSH3UaLOBmkWxaiIThYxpzx4h50dNN" \
+//-H "Content-Type: application/json" \
+//-d '{"score":1337,"playerName":"Sean Plott","cheatMode":false}' \
+//https://api.parse.com/1/classes/GameScore
