@@ -1,0 +1,49 @@
+<script src="../app/scripts/loadSignUpForm.js"></script>
+<script src="../templates/loginForm/scripts/formsJS.js"></script>
+<script src="../templates/loginForm/scripts/buttons.js"></script>
+<script src="../templates/loginForm/scripts/flipListener.js"></script>
+<link type="text/css" rel="stylesheet" href="../templates/loginForm/css-less/flip.css"/>
+
+<div class="hover panel">
+    <div class="front">
+        <div class="pad">
+            <div id="login" class="signin-card signin-card-animation">
+                <div class="logo-image">
+                    <img src="../templates/loginForm/resources/People.png" alt="Logo" title="Logo" width="138">
+                </div>
+                <h1 class="display1">Title</h1>
+                <p class="subhead">Description</p>
+                <form action="" method="" class="" role="form">
+                    <div id="form-login-username" class="form-group">
+                        <input id="username" class="form-control" name="username" type="text" size="18" alt="login" required />
+                        <span class="form-highlight"></span>
+                        <span class="form-bar"></span>
+                        <label for="username" class="float-label">username</label>
+                    </div>
+                    <div id="form-login-password" class="form-group">
+                        <input id="passwd" class="form-control" name="passwd" type="password" size="18" alt="password" required>
+                        <span class="form-highlight"></span>
+                        <span class="form-bar"></span>
+                        <label for="passwd" class="float-label">password</label>
+                    </div>
+                    <div id="form-login-remember" class="form-group">
+                        <div class="checkbox checkbox-default">
+                            <input id="remember" type="checkbox" value="yes" alt="Remember me" class="">
+                            <label for="remember">Remember me</label>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-block btn-default btn-info ripple-effect" type="submit" name="Submit" alt="sign in">Sign in</button>
+                        <button class="btn btn-block btn-flat btn-info ripple-effect" type="button" name="Submit" alt="sign in" id="flip">Sign up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="back">
+        <div class="pad">
+
+        </div>
+    </div>
+</div>

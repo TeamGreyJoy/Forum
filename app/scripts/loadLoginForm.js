@@ -4,5 +4,6 @@ $(document).ready(function(){
     var mainSection = $('main');
     mainSection.css("background-image", "url(../resources/bgn.jpg)");
     mainSection.css("background-size", "cover");
-    contentSection.load("../templates/loginForm/index.html");
+    contentSection.load("../templates/loginForm/signIn.html");
+
 });
