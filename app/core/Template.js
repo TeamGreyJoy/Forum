@@ -7,7 +7,7 @@ var Template = (function ($) {
             callback = function() { }
         }
 
-        $("body").load(TEMPLATES_FOLDER + '/' + template + '.html', callback);
+        $("#content").load(TEMPLATES_FOLDER + '/' + template + '.html', callback);
     };
 
     return {

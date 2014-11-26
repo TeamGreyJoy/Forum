@@ -30,7 +30,7 @@ $(document).ready(function() {
     ];
 
     var __clientModules = [
-        "Question",
+        "Question"
     ];
 
     for (var module in __coreModules) {

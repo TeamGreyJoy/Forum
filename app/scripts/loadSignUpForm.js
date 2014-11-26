@@ -6,5 +6,5 @@ $(document).ready(function(){
 
 function loadSignUpForm(){
     var contentSection = $('.back .pad');
-    contentSection.load("../templates/loginForm/signUp.html");
+    contentSection.load("templates/webPage/loginForm/signUp.html");
 }
