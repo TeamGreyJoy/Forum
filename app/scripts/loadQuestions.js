@@ -1,6 +1,6 @@
-function loadQuestions(){
-    var PARSE_APP_ID = "UYWVoDe8RusQmxyZ4HZhkLxYC0sVR0lV6pM8RECE";
-    var PARSE_REST_KEY = "YbUmvG1QEasOSFwt6rvJ8CYEY9T5bESlwxMSWzbY";
+$(document).ready(function(){
+    var PARSE_APP_ID = "QFDHAYIxgeNrofyDI6kABUANT5QLOU0czweGbM0E";
+    var PARSE_REST_KEY = "yZ9U8A0vlHViGVwmlL85cPrADPtBy3DTnuYj2VfP";
     jQuery.ajax({
         method: 'GET',
         headers: {
@@ -9,15 +9,13 @@ function loadQuestions(){
         },
         url: "https://api.parse.com/1/classes/Questions"
     }).success(function(data){
-        console.log("loaded");
         for(var i = 0, j = 1; i < data.results.length; i++, j++){
             var objArray = data.results;
             var questionObj = objArray[i];
-            var questionText = questionObj.questionText;
-            var element = $('#content :nth-child(' + j + ') h2');
-            element.text(questionText);
-            console.log(questionText);
-            $(".changeColor").clone(true).appendTo('#content');
+            var questionTitle = questionObj.title;
+            var element = $('#content :nth-child(' + j + ') h2')[0];
+            var content = document.createTextNode(questionText);
+            element.appendChild(content);
         }
 //        for(var obj in data.results){
 //            console.log(data.results);
@@ -26,4 +24,4 @@ function loadQuestions(){
 //            element.text(questionText);
 //        }
     });
-}
+});
