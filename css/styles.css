@@ -67,6 +67,9 @@ body #wrapper header>h3{
 }
 
 body #wrapper>main{
+    background-image: url(../resources/bgn.jpg);
+    transition: background-image 2000ms;
+    background-size: cover;
     position: absolute;
     width: 60%;
     height: 850px;
@@ -75,6 +78,10 @@ body #wrapper>main{
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.13);
     left: 20%;
     top: 70px;
+}
+
+body #wrapper>main.toggleBgn{
+    background-image: url(../resources/bgnGreen.png);
 }
 
 body #wrapper>main>header>h2{
@@ -135,4 +142,20 @@ body footer{
     background-color: #5264AE;
     height: 150px;
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.07);
+}
+
+
+#welcome{
+    margin: 0 auto;
+    position: relative;
+    width: 50%;
+    background-color: #ffffff;
+    color: #5264AE;
+    text-align: center;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.5);
+}
+
+#welcome>header>h2{
+    padding: 30px;
+    text-shadow: 1px 1px 10px #5264AE;
 }
