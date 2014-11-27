@@ -95,7 +95,7 @@
                 return categoryId;
             }
 
-            function loadQuestionsFromGivenCategory(data) {
+            function loadQuestionsFromGivenCategory(data) { //Load this questions with given category ID
                 var categoryId = extractCategoryID(data);
                 $.ajax({
                     method: "GET",
