@@ -15,8 +15,22 @@ var Ajax = (function ($) {
         }).success(callback);
     }
 
+    var pull = function(url, method, callback) {
+        $.ajax({
+            headers: {
+                "X-Parse-Application-Id": PARSE_APP_ID,
+                "X-Parse-REST-API-Key": PARSE_REST_KEY
+            },
+            type: method,
+            contentType: "application/json; charset=utf-8",
+            url: url,
+            dataType: "json"
+        }).success(callback);
+    }
+
     return {
-        call: call
+        call: call,
+        pull: pull
     }
 
 }(jQuery));

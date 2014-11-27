@@ -15,3 +15,4 @@ var Template = (function ($) {
     }
 
 })(jQuery);
+

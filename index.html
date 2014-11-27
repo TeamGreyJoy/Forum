@@ -19,6 +19,9 @@
     <!--load main page javascript files-->
     <script src="app/scripts/sectionColors.js"></script>
     <script src="app/scripts/actionButton.js"></script>
+    <script src="app/core/Ajax.js"></script>
+    <script src="app/core/Aplication.js"></script>
+    <script src="app/core/Template.js"></script>
     <script src="app/scripts/loadQuestions.js"></script>
 
     <!--load login form styles and js-->
@@ -27,7 +30,7 @@
     <link rel="stylesheet/less" href="templates/webPage/loginForm/css-less/styles.less" type="text/css" />
     <script src="app/scripts/less.min.js"></script>
     <!-- <script src="app/scripts/loadSignIn.js"></script> -->
-    <script src="app/scripts/loadQuestions.js"></script>
+
     <title>Example Template</title>
 </head>
 <body>
@@ -73,7 +76,17 @@
 
     <main>
         <section id="content" class="accordion">
-
+            <polymer-element name="my-element" noscript>
+              <template>
+                <span>Hello from <b>my-element</b>. This is my Shadow DOM.</span>
+              </template>
+            </polymer-element>
+            <button id="renderQuestions">Render Questions</button>
+            <polymer-element name="my-element" noscript>
+              <template>
+                <span>Hello from <b>my-element</b>. This is my Shadow DOM.</span>
+              </template>
+            </polymer-element>
         </section>
     </main>
 </div>
