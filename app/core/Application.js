@@ -32,7 +32,11 @@ $(document).ready(function() {
     var __clientModules = [
         "Question",
         "loadCategories",
-        "loadQuestions"
+        "loadQuestions",
+        "SignIn",
+        "SignUp",
+        "SignUpFunc",
+        "LogIn"
     ];
 
     for (var module in __coreModules) {

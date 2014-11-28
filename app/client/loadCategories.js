@@ -6,7 +6,8 @@ function loadCategories() {
             console.log(data);
             var menu = $('.menu');
             var d = data;
-            App.loadClientModule('loadQuestions')
+            console.log('da')
+            App.loadClientModule('loadQuestions');
             for (var i = 0; i < data.results.length; i++) {
                 var categoryData = data.results[i];
                 var el = $('.categoryItem').last();

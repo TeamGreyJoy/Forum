@@ -7,7 +7,7 @@ function loadQuestions(e){
         Template.load("questionHTMLTemplate", function() {
             for (var i = 0; i < data.results.length; i++) {
                 var quData = data.results[i];
-                var el = $(".changeColor").last();
+                var el = $(".questionSection").last();
                 $(el).parent().append($(el).clone(true));
                 $(el).css('background-color', colors[Math.floor(Math.random() * 4) + 0]);
                 $(el).find('h2').text(quData.title);
