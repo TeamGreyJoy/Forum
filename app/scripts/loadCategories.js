@@ -1,7 +1,7 @@
 // this script have to be added in app/scripts
 $(document).ready(function() {
     Ajax.pull("https://api.parse.com/1/classes/Categories", "GET", function(data) {
-        Template.load("category", function() {
+        Aside.load("category", function() {
             var meny = $('.menu');
             for (var i = 0; i < data.results.length; i++) {
                 var categoryData = data.results[i];
