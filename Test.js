@@ -1,29 +1,29 @@
-var PARSE_APP_ID = "QFDHAYIxgeNrofyDI6kABUANT5QLOU0czweGbM0E";
-var PARSE_REST_API_KEY = "yZ9U8A0vlHViGVwmlL85cPrADPtBy3DTnuYj2VfP";
+// var PARSE_APP_ID = "QFDHAYIxgeNrofyDI6kABUANT5QLOU0czweGbM0E";
+// var PARSE_REST_API_KEY = "yZ9U8A0vlHViGVwmlL85cPrADPtBy3DTnuYj2VfP";
 
-$(document).ready(function($){
-    var category = $('.label-aside');
-    $(category).click(categoryClicked);
+// $(document).ready(function($){
+//     var category = $('.label-aside');
+//     $(category).click(categoryClicked);
 
-    function categoryClicked() {
-        var category = $(this).text;
-        console.log(category);
-        $("#answers").hide();
-        $("#answers h2").text(question.questionText);
-        var questionId = question.objectId;
-        $.ajax({
-            method: "GET",
-            headers: {
-                "X-Parse-Application-Id": PARSE_APP_ID,
-                "X-Parse-REST-API-Key": PARSE_REST_API_KEY
-            },
-            url: 'https://api.parse.com/1/classes/Answer?where={"question":{"__type":"Pointer","className":"Question","objectId":"' + questionId + '"}}',
-            success: answersLoaded,
-            error: ajaxError
-        });
-    }
+//     function categoryClicked() {
+//         var category = $(this).text;
+//         console.log(category);
+//         $("#answers").hide();
+//         $("#answers h2").text(question.questionText);
+//         var questionId = question.objectId;
+//         $.ajax({
+//             method: "GET",
+//             headers: {
+//                 "X-Parse-Application-Id": PARSE_APP_ID,
+//                 "X-Parse-REST-API-Key": PARSE_REST_API_KEY
+//             },
+//             url: 'https://api.parse.com/1/classes/Answer?where={"question":{"__type":"Pointer","className":"Question","objectId":"' + questionId + '"}}',
+//             success: answersLoaded,
+//             error: ajaxError
+//         });
+//     }
 
-})(jQuery)
+// })(jQuery)
 
 //var PARSE_APP_ID = "QFDHAYIxgeNrofyDI6kABUANT5QLOU0czweGbM0E";
 //var PARSE_REST_API_KEY = "yZ9U8A0vlHViGVwmlL85cPrADPtBy3DTnuYj2VfP";
