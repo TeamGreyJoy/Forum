@@ -6,7 +6,7 @@ function successfulLogin(username){
     $.ajax({
         url: "templates/webPage/welcomeScreen.html",
         success: function (htmlData) {
-            $('main').append(htmlData);
+            main.append(htmlData);
             var usernameContainer = $('#welcome>header>h2');
             usernameContainer.text("Welcome " + username + "!");
         },
@@ -16,6 +16,7 @@ function successfulLogin(username){
 
     $.getScript("app/scripts/loadQuestions.js", function(){
         setTimeout(function(){
+            removeWelcomeCard();
             loadQuestions();
         }, 1100);
 
@@ -26,5 +27,9 @@ function fadeOutFadeIn(element){
     element.fadeTo("slow", 0.7);
     setTimeout(function(){
         element.fadeTo("slow", 1);
-    }, 500);
+    }, 1300);
+}
+
+function removeWelcomeCard(){
+    $('#welcome').remove();
 }
