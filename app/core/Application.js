@@ -30,7 +30,9 @@ $(document).ready(function() {
     ];
 
     var __clientModules = [
-        "Question"
+        "Question",
+        "loadCategories",
+        "loadQuestions"
     ];
 
     for (var module in __coreModules) {

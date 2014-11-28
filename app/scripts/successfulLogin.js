@@ -14,13 +14,11 @@ function successfulLogin(username){
     });
     console.log(username);
 
-    $.getScript("app/scripts/loadQuestions.js", function(){
         setTimeout(function(){
             removeWelcomeCard();
-            loadQuestions();
         }, 1100);
-
-    });
+        App.loadClientModule('loadCategories');
+        loadCategories();
 }
 
 function fadeOutFadeIn(element){
