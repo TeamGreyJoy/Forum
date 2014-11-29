@@ -8,11 +8,13 @@ var Ajax = (function ($) {
             method: method,
             headers: {
                 "X-Parse-Application-Id": PARSE_APP_ID,
-                "X-Parse-REST-API-Key": PARSE_REST_KEY
+                "X-Parse-REST-API-Key": PARSE_REST_KEY,
             },
             data: data,
             url: url
-        }).success(callback);
+        }).done(function(results){
+            callback(results);
+        });
     }
 
     var pull = function(url, method, callback) {

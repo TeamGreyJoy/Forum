@@ -1,4 +1,14 @@
 $(document).ready(function() {
-    console.log("da");
-    Template.load("signIn", function() { App.loadClientModule("signUp")});
+    checkLoggedIn()
+        .done(function(result){
+            if(result.sessionToken == sessionStorage.sessionToken){
+                loadCategories();
+            }
+            else{
+                console.log("Something went wrong!");
+            }
+        })
+        .fail(function(err){
+            Template.load("signIn", function() { App.loadClientModule("signUp")});
+        })
 });

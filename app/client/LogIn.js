@@ -6,6 +6,8 @@ function logIn() {
     var passwd = $('#passwd').val();
     var dataObj = {'username': username, 'password': passwd};
     var data = JSON.stringify(dataObj).replace(/:/g, "=").replace(/["'{}]/g, "").replace(/,/g, "&");
-    console.log(data);
-    Ajax.call(url, method, data, loadCategories());
+    Ajax.call(url, method, data, function(results) {
+        sessionStorage.sessionToken = results.sessionToken;
+        loadCategories();
+    });
 }

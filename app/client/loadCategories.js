@@ -6,7 +6,6 @@ function loadCategories() {
             console.log(data);
             var menu = $('.menu');
             var d = data;
-            console.log('da')
             App.loadClientModule('loadQuestions');
             for (var i = 0; i < data.results.length; i++) {
                 var categoryData = data.results[i];
