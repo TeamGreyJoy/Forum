@@ -37,7 +37,8 @@ $(document).ready(function() {
         "SignUp",
         "SignUpFunc",
         "LogIn",
-        "checkLoggedIn"
+        "checkLoggedIn",
+        "logOut"
     ];
 
     for (var module in __coreModules) {

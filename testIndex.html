@@ -7,6 +7,12 @@
     <script src="app/scripts/less.min.js"></script>
     <script src="app/scripts/jquery-min.js"></script>
 
+    <!--importing explicitly otherwise is not working-->
+    <script src="app/scripts/cookies.js"></script>
+
+    <!--importing encrypting lib-->
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/md5.js"></script>
+
     <!--importing some basic styles-->
     <link type="text/css" rel="stylesheet" href="css/styles.css">
     <!--<link type="text/css" rel="stylesheet/less" href="css/buttons.less">-->
@@ -16,14 +22,14 @@
 
 
     <!--importing main scripts-->
-    <script src="app/core/Ajax.js"></script>
     <script src="app/core/Application.js"></script>
+    <script src="app/core/Ajax.js"></script>
     <script src="app/core/Template.js"></script>
 
 </head>
 <body>
 <div id="wrapper">
-    <header>
+    <header class="head">
         <h3>Categories</h3>
     </header>
 

@@ -7,7 +7,9 @@ function logIn() {
     var dataObj = {'username': username, 'password': passwd};
     var data = JSON.stringify(dataObj).replace(/:/g, "=").replace(/["'{}]/g, "").replace(/,/g, "&");
     Ajax.call(url, method, data, function(results) {
-        sessionStorage.sessionToken = results.sessionToken;
+        var token = results.sessionToken;
+        cookie.set("sessionToken", token, 1);
+        Header.load("logOut", function() { App.loadClientModule("logOut") });
         loadCategories();
     });
 }
