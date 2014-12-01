@@ -9,9 +9,6 @@ function logIn() {
     var data = JSON.stringify(dataObj).replace(/:/g, "=").replace(/["'{}]/g, "").replace(/,/g, "&");
     Ajax.call(url, method, data, function(results) {
         var token = results.sessionToken;
-        sessionStorage.setItem('sessionToken', results.sessionToken);
-        sessionStorage.setItem('user', results);
-        console.log(results);
         cookie.set("sessionToken", token, 1);
         Header.load("logOut", function() { App.loadClientModule("logOut") });
         loadCategories();

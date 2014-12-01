@@ -19,17 +19,19 @@ var Ajax = (function ($) {
     }
 
     var pushRegistred = function(url, method, data) {
+        var token = cookie.get("sessionToken");
+        token = token.split(/=(\w+)/)[1];
         $.ajax({
             type: method,
             headers: {
                 "X-Parse-Application-Id": PARSE_APP_ID,
                 "X-Parse-REST-API-Key": PARSE_REST_KEY,
-                "X-Parse-Session-Token": sessionStorage.sessionToken                
+                "X-Parse-Session-Token": token
             },
             data: data,
             url: url,
             success: function() { alert("Success");},
-            error: function() { alert("Error");}
+            error: function(err) { console.log(err); }
         });
     }
 
