@@ -33,12 +33,14 @@ $(document).ready(function() {
         "Question",
         "loadCategories",
         "loadQuestions",
+        "loadAnswers",
         "SignIn",
         "SignUp",
         "SignUpFunc",
         "LogIn",
         "checkLoggedIn",
-        "logOut"
+        "logOut",
+        "toggleFunc"
     ];
 
     for (var module in __coreModules) {

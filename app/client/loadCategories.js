@@ -11,12 +11,12 @@ function loadCategories() {
                 var categoryData = data.results[i];
                 var el = $('.categoryItem').last();
                 $(el).parent().append($(el).clone(true));  
-                var h3 = $('<h3>').text(categoryData.title);
+                var h3 = $('<h3>').text(categoryData.title).css('cursor', 'pointer');
                 $(el).append(h3);
                 $(el).data('category', categoryData);
                 $(el).click(loadQuestions);
             }
         });
     });
-};
+}
 
