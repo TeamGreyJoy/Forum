@@ -52,3 +52,21 @@ var Header = (function ($) {
 
 })(jQuery);
 
+var Footer = (function ($) {
+
+    var TEMPLATES_FOLDER = 'templates';
+
+    var load = function(template, callback) {
+        if (typeof (callback) == 'undefined') {
+            callback = function() { }
+        }
+
+        $("footer[class=foot]").load(TEMPLATES_FOLDER + '/' + template + '.html', callback);
+    };
+
+    return {
+        load: load
+    }
+
+})(jQuery);
+

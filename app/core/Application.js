@@ -40,7 +40,6 @@ $(document).ready(function() {
         "LogIn",
         "checkLoggedIn",
         "logOut",
-        "toggleFunc"
     ];
 
     for (var module in __coreModules) {

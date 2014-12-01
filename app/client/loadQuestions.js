@@ -19,7 +19,25 @@ function loadQuestions(e){
                 $(el).find('.text').text(quData.text);
                 $(el).find('.date')
                 .text('Created on : ' + date.toDateString());
-            }
+            }            
+        });
+        Footer.load('newQuestion', function() {
+            $('.addNewQuestion').click(function(){
+                $('.addNewQuestion').hide();                
+                $('.newQuestionForm').show();
+                $('.submitNewQuestion').click(function(){
+                    Ajax.pushRegistred('https://api.parse.com/1/classes/Question',
+                     'POST',
+                      '{"title":"' + $('.newQuestionTitle').val() + 
+                        '","text":"'+ $('.newQuestionText').val() +'","classType":"question"}');
+                });                                 
+                // $('.newQuestionForm').hide();
+                // $('.addNewQuestion').show();
+            });
+            $('.cancelNewQuestion').click(function(){
+                $('.newQuestionForm').hide();
+                $('.addNewQuestion').show();
+            });
         });
     });
 }
