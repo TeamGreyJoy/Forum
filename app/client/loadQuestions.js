@@ -19,7 +19,9 @@ function loadQuestions(e){
                 $(el).find('.text').text(quData.text);
                 $(el).find('.date')
                 .text('Created on : ' + date.toDateString());
-            }            
+            }
+
+
         });
         Footer.load('newQuestion', function() {
             $('.addNewQuestion').click(function(){

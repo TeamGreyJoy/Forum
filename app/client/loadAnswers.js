@@ -1,3 +1,10 @@
+function renderAnswer(el, answerData, date, backgroundCol) {
+    $(el).parent().append($(el).clone(true));
+    $(el).css('background-color',backgroundCol);
+    $(el).find('.text').text(answerData.text);
+    $(el).find('.date').text('Created on : ' + date.toDateString());
+}
+
 function loadAnswers() {
 	var colors = ['#4285F4', '#3F51B5', "#0F9D58", '#FF5722'];
     var question = $(this).data('question');
@@ -14,15 +21,23 @@ function loadAnswers() {
             $(el).find('.text').text(quData.text);
             $(el).find('.date')
             .text('Created on : ' + date.toDateString());
+
+            $(".openAnswerBox").attr('data-id', quData.objectId);
+
             for (var i = 0; i < data.results.length; i++) {
                 var answerData = data.results[i];
                 var date = new Date(answerData.createdAt);
                 var el = $(".answer").last();
-                $(el).parent().append($(el).clone(true));
-                $(el).css('background-color',backgroundCol);
-                $(el).find('.text').text(answerData.text);
-                $(el).find('.date').text('Created on : ' + date.toDateString());
+                renderAnswer(el, answerData, date, backgroundCol);
             }
+
+            $(".openAnswerBox").click(function() {
+                var el = $(this);
+                $(".textarea").load("templates/answers/add.html", function() {
+                    App.loadClientModule("addAnswer");
+                    $("#questionId").attr('data-questionId', $(el).attr('data-id'));
+                });
+            })
         });
     });
 }
