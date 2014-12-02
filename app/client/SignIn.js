@@ -1,7 +1,10 @@
 $(document).ready(function() {
     checkLoggedIn()
         .done(function(result){
-            Header.load("logOut", function() { App.loadClientModule("logOut") });
+            Header.load("headerButtons", function() {
+                App.loadClientModule("logOut");
+                App.loadClientModule("viewProfile");
+            });
             loadCategories();
         })
         .fail(function(err){

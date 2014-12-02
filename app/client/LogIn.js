@@ -9,8 +9,13 @@ function logIn() {
     var data = JSON.stringify(dataObj).replace(/:/g, "=").replace(/["'{}]/g, "").replace(/,/g, "&");
     Ajax.call(url, method, data, function(results) {
         var token = results.sessionToken;
+        cookie.set("username", results.username, 1);
+        cookie.set("email", results.email, 1);
         cookie.set("sessionToken", token, 1);
-        Header.load("logOut", function() { App.loadClientModule("logOut") });
+        Header.load("headerButtons", function() {
+            App.loadClientModule("logOut");
+            App.loadClientModule("viewProfile");
+        });
         loadCategories();
     });
 }
