@@ -27,10 +27,45 @@ body #wrapper{
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.04);
 }
 body #wrapper>header{
-    background-color: #F16C99;
+    background: url("../resources/bgnTemplate2.png") repeat-x;
     width: 100%;
     height: 150px;
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.07);
+}
+
+body #wrapper>header #userSpace{
+    position: relative;
+    height: 100%;
+    top: 20%;
+    width: 20%;
+    float: right;
+}
+
+body #wrapper>header #userSpace>div{
+    padding: 10px;
+}
+
+body #wrapper>header #userSpace img{
+    margin-left: 10%;
+    width: 50px;
+    border: 4px #ffffff solid;
+    background: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+body #wrapper>header #userSpace h3{
+    color: #ffffff;
+    padding: 1px;
+    margin-left: 5%;
+    display: inline-block;
+}
+
+body #wrapper>header #userSpace button{
+    margin: 0;
+    margin-right: 4%;
+    width: 45%;
+    display: inline-block;
 }
 
 body #wrapper header>h3{
@@ -68,10 +103,6 @@ body #wrapper>main{
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.13);
     left: 20%;
     top: 70px;
-}
-
-body #wrapper.toggleBgn{
-    background-image: url(../resources/bgnGreen.png);
 }
 
 body #wrapper>main>header>h2{
@@ -131,7 +162,7 @@ body footer{
     position: relative;
     width: 85%;
     margin: 0 auto;
-    background-color: #F16C99;
+    background: url("../resources/bgnTemplate2.png") repeat-x;
     height: 150px;
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.07);
 }
@@ -150,4 +181,12 @@ body footer{
 #welcome>header>h2{
     padding: 30px;
     text-shadow: 1px 1px 10px #5264AE;
+}
+
+.signin-card-animation {
+    -webkit-animation: cardEnter 0.75s ease-in-out 0.5s;
+    animation: cardEnter 0.75s ease-in-out 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    opacity: 0;
 }

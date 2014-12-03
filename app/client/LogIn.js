@@ -9,10 +9,11 @@ function logIn() {
     var data = JSON.stringify(dataObj).replace(/:/g, "=").replace(/["'{}]/g, "").replace(/,/g, "&");
     Ajax.call(url, method, data, function(results) {
         var token = results.sessionToken;
-        cookie.set("username", results.username, 1);
-        cookie.set("email", results.email, 1);
+        var username = results.username;
+        var email = results.email;
         cookie.set('userId', results.objectId, 1);
-        console.log(cookie.get('userId'));
+        cookie.set("username", username, 1);
+        cookie.set("email", email, 1);
         cookie.set("sessionToken", token, 1);
         Header.load("headerButtons", function() {
             App.loadClientModule("logOut");
