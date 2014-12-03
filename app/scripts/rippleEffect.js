@@ -1,6 +1,6 @@
 // Ripple-effect animation
-$(document).ready(function(){
-    $(".ripple-effect").on('click', function(e){
+(function($) {
+    $(".ripple-effect").click(function(e){
         var rippler = $(this);
 
         // create .ink element if it doesn't exist
@@ -30,4 +30,4 @@ $(document).ready(function(){
             left:x+'px'
         }).addClass("animate");
     })
-});
+})(jQuery);

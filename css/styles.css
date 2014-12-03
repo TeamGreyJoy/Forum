@@ -1,10 +1,13 @@
 html, body {
+    font-size: 1rem;
     padding: 0;
     margin: 0;
 }
 
 body {
     background-color: #f9f9f9;
+    background: url(../resources/lollipop.jpg) repeat-x;
+    background-size: contain;
     font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -15,14 +18,16 @@ body {
 }
 
 body #wrapper{
+    background-color: #ffffff;
+    z-index: 1;
     width: 85%;
-    height: 900px;
+    height: 800px;
     margin: 0 auto;
     margin-top: -30px;
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.04);
 }
 body #wrapper>header{
-    background-color: #5264AE;
+    background-color: #F16C99;
     width: 100%;
     height: 150px;
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.07);
@@ -40,39 +45,24 @@ body #wrapper header>h3{
 }
 
 .menu {
-    display: inline-block;
-    width: 20%;
+    float: left;
+    z-index: 32;
+    width: 18%;
+    margin-right: 0.2%;
+    height: 100%;
     background-color: #fff;
-    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.1);
 }
-
-.item {
-    position: relative;
-    height: 60px;
-    line-height: 60px;
-    color: #646464;
-    font-size: 1.1em;
-    -webkit-transition: box-shadow 400ms; /* For Safari 3.1 to 6.0 */
-    transition: box-shadow 400ms;
-}
-
-.item:hover{
-    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.15);
-    /*background-color: #F0F0F0;*/
-    cursor: pointer;
-}
-
-.label-aside {
-    padding: 0 30px;
+.menu button{
+    font-size: 1rem;
+    margin: 2px auto;
+    width: 98%;
+    padding: 3px;
 }
 
 body #wrapper>main{
-    background-image: url(../resources/bgn.jpg);
-    transition: background-image 2000ms;
-    background-size: cover;
-    position: absolute;
+    float: left;
     width: 60%;
-    height: 850px;
+    height: 100%;
     overflow: auto;
     background-color: #ffffff;
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.13);
@@ -80,7 +70,7 @@ body #wrapper>main{
     top: 70px;
 }
 
-body #wrapper>main.toggleBgn{
+body #wrapper.toggleBgn{
     background-image: url(../resources/bgnGreen.png);
 }
 
@@ -138,9 +128,10 @@ body #wrapper main #content section header h3 div.actionButtonContainter{
 }
 
 body footer{
+    position: relative;
     width: 85%;
     margin: 0 auto;
-    background-color: #5264AE;
+    background-color: #F16C99;
     height: 150px;
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.07);
 }
