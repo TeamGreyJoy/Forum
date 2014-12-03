@@ -23,7 +23,7 @@ function loadAnswers() {
             .text('Created on : ' + date.toDateString());
 
             $(".openAnswerBox").attr('data-id', quData.objectId);
-
+            $('#newQuestion').hide()
             for (var i = 0; i < data.results.length; i++) {
                 var answerData = data.results[i];
                 var date = new Date(answerData.createdAt);

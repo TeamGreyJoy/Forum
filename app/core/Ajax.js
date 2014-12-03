@@ -33,10 +33,10 @@ var Ajax = (function ($) {
             },
             data: data,
             url: url,
-            success: function() { alert("Success");},
-            error: function(err) { console.log(err); }
+            success: function(data) { alert(data);},
+            error: function() { alert("Error"); }
         });
-    }
+    };
 
     var pull = function(url, method, callback) {
         $.ajax({

@@ -1,45 +1,32 @@
-.newQuestion {
-	position: relative;
-	top: 0px;
-	left: 108px;
-	text-align: left;
-	color: white;
+#newQuestion {
+    bottom: 154px;
+    left: 300px;
+    position: absolute;
+    text-align: left;
+    width: 634px;
 }
-
-.newQuestion > section {
+#newQuestionForm {
 	display: none;
-	position: absolute;
-	bottom:  -47px;
-	left: 79px;
-	background-color: #1C9C9C;
+	background-color: #DDE139;
+	padding: 5px;
+	border-radius: 3px;
 }
 
-.newQuestion button {
+#newQuestionForm > input, textarea {
+	display: block;
+	width: 99%;
+	margin: 5px;
 	border: none;
-	background-color: #2A7FFF;
-	width: 200px;
-	height: 50px;
-	font-size: 20px;
+	border-radius: 3px;
+	resize: none;
 }
 
-.newQuestion > section >
-textarea {
-	resize : none;
-	width: 640px;
+#newQuestionForm > textarea {
 	height: 300px;
 }
 
-.newQuestion > section >
-input {
-	width: 640px;
-}
-
-.newQuestion > section > 
-label, input, textarea, button {
-	display: block;
-	margin: 10px;
-}
-
-.newQuestionForm > button {
-	display: inline-block;
+#newQuestionForm > p {
+	font-size: 13px;
+	font-style: italic;
+	color: #FFF; 
 }

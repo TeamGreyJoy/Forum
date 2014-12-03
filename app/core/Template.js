@@ -52,7 +52,7 @@ var Header = (function ($) {
 
 })(jQuery);
 
-var Footer = (function ($) {
+var Wrapper = (function ($) {
 
     var TEMPLATES_FOLDER = 'templates';
 
@@ -61,12 +61,10 @@ var Footer = (function ($) {
             callback = function() { }
         }
 
-        $("footer[class=foot]").load(TEMPLATES_FOLDER + '/' + template + '.html', callback);
+        $("#controls").load(TEMPLATES_FOLDER + '/' + template + '.html', callback);
     };
-
     return {
         load: load
-    }
-
+    };
 })(jQuery);
 

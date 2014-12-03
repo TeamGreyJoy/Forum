@@ -20,25 +20,50 @@ function loadQuestions(e){
                 $(el).find('.date')
                 .text('Created on : ' + date.toDateString());
             }
-
-
         });
-        Footer.load('newQuestion', function() {
-            $('.addNewQuestion').click(function(){
-                $('.addNewQuestion').hide();                
-                $('.newQuestionForm').show();
-                $('.submitNewQuestion').click(function(){
+        Wrapper.load('newQuestion', function() {
+            $('#addNewQuestion').click(function(){
+                $('#addNewQuestion').hide();                
+                $('#newQuestionForm').show();
+                $('#submitNewQuestion').click(function(){
+                    var categoryId = category.objectId;
+                    var userId = cookie.get('userId');
+                    var questionTitle = $('#newQuestionTitle').val();
+                    var questionText = $('#newQuestionText').val();
+                    var postData = {
+                        'title': questionTitle,
+                        'text': questionText,
+                        'classType': 'question',
+                        'autor': {
+                            '__type':'Pointer',
+                            'className':'_User',
+                            'objectId':userId
+                        },
+                        'category': {
+                            '__type':'Pointer',
+                            'className':'Categories',
+                            'objectId':categoryId
+                        },
+                        'ACL':{
+                            userId:{
+                                'write':true,
+                                'read':true
+                            },
+                              '*': {
+                                'read': true
+                                }
+                        }
+                    };
                     Ajax.pushRegistred('https://api.parse.com/1/classes/Question',
                      'POST',
-                      '{"title":"' + $('.newQuestionTitle').val() + 
-                        '","text":"'+ $('.newQuestionText').val() +'","classType":"question"}');
-                });                                 
-                // $('.newQuestionForm').hide();
-                // $('.addNewQuestion').show();
+                      JSON.stringify(postData));
+                    $('#newQuestionForm').hide();
+                    $('#addNewQuestion').show();
+                });              
             });
-            $('.cancelNewQuestion').click(function(){
-                $('.newQuestionForm').hide();
-                $('.addNewQuestion').show();
+            $('#cancelNewQuestion').click(function(){
+                $('#newQuestionForm').hide();
+                $('#addNewQuestion').show();
             });
         });
     });

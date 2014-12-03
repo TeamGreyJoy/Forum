@@ -11,6 +11,8 @@ function logIn() {
         var token = results.sessionToken;
         cookie.set("username", results.username, 1);
         cookie.set("email", results.email, 1);
+        cookie.set('userId', results.objectId, 1);
+        console.log(cookie.get('userId'));
         cookie.set("sessionToken", token, 1);
         Header.load("headerButtons", function() {
             App.loadClientModule("logOut");
