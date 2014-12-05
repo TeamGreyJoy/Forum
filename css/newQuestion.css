@@ -21,12 +21,13 @@
 	resize: none;
 }
 
-#newQuestionForm > textarea {
-	height: 300px;
+#newQuestionText {
+	height: 200px;
 }
 
-#newQuestionForm > p {
-	font-size: 13px;
+#newQuestionForm > h5 {
+	font-size: 22px;
 	font-style: italic;
 	color: #FFF; 
 }
+

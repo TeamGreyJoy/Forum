@@ -3,7 +3,6 @@
 function loadCategories() {
     Ajax.pull("https://api.parse.com/1/classes/Categories", "GET", function(data) {
         Aside.load("category", function() {
-            console.log(data);
             var menu = $('.menu');
             var d = data;
             App.loadClientModule('loadQuestions');
