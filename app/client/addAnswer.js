@@ -1,5 +1,8 @@
 $(document).ready(function() {
-
+    $("#cancellAnswerAdd").click(function(){
+        $("#newAnswerDiv").hide();
+        $('.openAnswerBox').show();
+    });
     $("#addAnswer").click(function() {
         var data = {};
         data.text = $("#answerText").val();
@@ -15,8 +18,8 @@ $(document).ready(function() {
             answerData.text = $("#answerText").val();
 
             renderAnswer(el, answerData, date, backgroundCol);
-
-            $(".textarea").hide();
+            $("#newAnswerDiv").hide();
+            $('.openAnswerBox').show();
         });
     });
 

@@ -21,9 +21,8 @@ function loadAnswers() {
             $(el).find('.text').text(quData.text);
             $(el).find('.date')
             .text('Created on : ' + date.toDateString());
-
             $(".openAnswerBox").attr('data-id', quData.objectId);
-            $('#newQuestion').hide()
+            $('#newQuestion').hide();
             for (var i = 0; i < data.results.length; i++) {
                 var answerData = data.results[i];
                 var date = new Date(answerData.createdAt);
@@ -32,7 +31,8 @@ function loadAnswers() {
             }
 
             $(".openAnswerBox").click(function() {
-                var el = $(this);
+                $('.openAnswerBox').hide();
+                var el = $(this);                
                 $(".textarea").load("templates/answers/add.html", function() {
                     App.loadClientModule("addAnswer");
                     $("#questionId").attr('data-questionId', $(el).attr('data-id'));

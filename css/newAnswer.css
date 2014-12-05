@@ -1,5 +1,26 @@
+#newAnswerDiv {
+    bottom: 154px;
+    left: 300px;
+    position: absolute;
+    text-align: left;
+    width: 634px;
+	background-color: #DDE139;
+	padding: 5px;
+	border-radius: 3px;
+}
+
+#answerText {
+	display: block;
+	height: 300px;
+	width: 99%;
+	margin: 5px;
+	border: none;
+	border-radius: 3px;
+	resize: none;
+}
 .openAnswerBox {
 	position: absolute;
     bottom: 154px;
     left: 300px;
+    width: 624px;;
 }
