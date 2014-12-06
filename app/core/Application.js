@@ -39,7 +39,9 @@ $(document).ready(function() {
         "SignUpFunc",
         "LogIn",
         "checkLoggedIn",
-        "viewProfile"
+        "viewProfile",
+        "collectUserData",
+        "fillUpUserProfile"
     ];
 
     for (var module in __coreModules) {

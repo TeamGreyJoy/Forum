@@ -1,0 +1,51 @@
+.image-container{
+    float: left;
+    display: inline-block;
+}
+
+.image-container:hover{
+    -webkit-animation: anim2 ease-in-out 3s infinite alternate;
+}
+
+.image-container img{
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    margin: 30px;
+    margin-left: 50px;
+    width: 15rem;
+
+}
+
+.userInfo{
+    height: 100%;
+    width: 60%;
+    margin: 30px;
+    padding-left: 25px;
+    display: inline-block;
+}
+
+.userInfo .general-info, .contact-info{
+    padding: 10px;
+    width: 44%;
+    display: inline-block;
+}
+
+.userInfo .contact-info{
+    margin-left: 10%;
+}
+
+.userInfo .general-info h3{
+    color: #F0AD4E;
+}
+
+.userInfo .contact-info h3{
+    color: #F0AD4E;
+}
+
+@-webkit-keyframes anim2
+{
+    from {left: 0px;   -webkit-transform: scale(1.0) rotate(0deg)   }
+    50%  {left: 250px; -webkit-transform: scale(0.8) rotate(10deg)  }
+    to   {left: 500px; -webkit-transform: scale(1.2) rotate(-20deg) }
+}

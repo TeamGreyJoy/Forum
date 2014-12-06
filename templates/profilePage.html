@@ -1,7 +1,71 @@
-<div id="container" style="background: #dddddd">
-    <img src="" alt="avatar"/>
-    <p id="userNamePar"></p>
-    <p id="emailPar"></p>
-    <p id="createdAt"></p>
-    <button id="resetPasswd">Reset password</button>
+<script src="app/scripts/formsJS.js"></script>
+<script src="app/scripts/rippleEffect.js"></script>
+<script>
+    App.loadClientModule("fillUpUserProfile");
+</script>
+<div id="container" class="signin-card-animation">
+    <div class="image-container">
+        <img src="resources/People.png" alt="avatar"/>
+    </div>
+    <div class="userInfo">
+        <form action="" method="post" class="" role="form" id="">
+            <div class="general-info">
+                <h3>General</h3>
+                <div id="form-user-username" class="form-group">
+                    <input id="username" class="form-control" name="username" value="" type="text" size="15" alt="login" required=""/>
+                    <span class="form-highlight"></span>
+                    <span class="form-bar"></span>
+                    <label for="username" class="float-label">username</label>
+                </div>
+                <div id="form-user-name" class="form-group">
+                    <input id="name" class="form-control" name="name" type="text" size="15" alt="name" required>
+                    <span class="form-highlight"></span>
+                    <span class="form-bar"></span>
+                    <label for="name" class="float-label">name</label>
+                </div>
+                <div id="form-user-member" class="form-group">
+                    <input id="member" class="form-control" name="member" type="text" size="15" alt="member" required>
+                    <span class="form-highlight"></span>
+                    <span class="form-bar"></span>
+                    <label for="member" class="float-label">member since</label>
+                </div>
+                <div id="form-user-date-of-birth" class="form-group">
+                    <input id="date-of-birth" class="form-control" name="date-of-birth" type="text" size="15" alt="date-of-birth" required>
+                    <span class="form-highlight"></span>
+                    <span class="form-bar"></span>
+                    <label for="date-of-birth" class="float-label">date of birth</label>
+                </div>
+            </div>
+            <div class="contact-info">
+                <h3>Contact information</h3>
+                <div id="form-user-email" class="form-group">
+                    <input id="email" class="form-control" name="email" value="" type="email" size="15" alt="email" required=""/>
+                    <span class="form-highlight"></span>
+                    <span class="form-bar"></span>
+                    <label for="email" class="float-label">email</label>
+                </div>
+                <div id="form-user-phone" class="form-group">
+                    <input id="phone" class="form-control" name="phone" type="text" size="15" alt="phone" required>
+                    <span class="form-highlight"></span>
+                    <span class="form-bar"></span>
+                    <label for="phone" class="float-label">phone</label>
+                </div>
+                <div id="form-user-skype" class="form-group">
+                    <input id="skype" class="form-control" name="skype" type="text" size="15" alt="skype" required>
+                    <span class="form-highlight"></span>
+                    <span class="form-bar"></span>
+                    <label for="skype" class="float-label">skype</label>
+                </div>
+                <div id="form-user-facebook" class="form-group">
+                    <input id="facebook" class="form-control" name="facebook" type="text" size="15" alt="facebook" required>
+                    <span class="form-highlight"></span>
+                    <span class="form-bar"></span>
+                    <label for="facebook" class="float-label">facebook</label>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-block btn-raised btn-warning ripple-effect" type="button" name="Submit" alt="sign in" id="save">save</button>
+            </div>
+        </form>
+    </div>
 </div>

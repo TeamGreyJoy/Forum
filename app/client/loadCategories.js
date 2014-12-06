@@ -13,7 +13,7 @@ function loadCategories() {
                 var h3 = $('<h3>').text(categoryData.title).css('cursor', 'pointer');
                 $(el).append(h3);
                 $(el).data('category', categoryData);
-                console.log(el.data);
+                //console.log(el.data);
                 $(el).click(loadQuestions);
             }
         });

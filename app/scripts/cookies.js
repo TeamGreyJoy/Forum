@@ -48,7 +48,7 @@ var cookie = (function () {
         }
         cookie = cookie.substring(j);
         if (cookie.startsWith(name + "=")) {
-            return cookie.split(/=([\w+@\w+.\w+]+)/)[1];
+            return cookie.split(/=([\w+@\w+.\w+/]+)/)[1];
         }
     }
   }

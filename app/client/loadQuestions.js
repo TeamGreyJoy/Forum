@@ -34,9 +34,9 @@ function newQuestionFormLoad(category, colors) {
                             '}'+
                     '}'+
                 '}';
-                Ajax.pushRegistred('https://api.parse.com/1/classes/Question',
+                Ajax.call('https://api.parse.com/1/classes/Question',
                  'POST',
-                  postData);
+                  postData, function(results){}, "application/json", true);
                 questionsLoad(category, colors);
                 $('#newQuestionForm').hide();
                 $('#addNewQuestion').show();

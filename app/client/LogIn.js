@@ -8,13 +8,7 @@ function logIn() {
     console.log(dataObj);
     var data = JSON.stringify(dataObj).replace(/:/g, "=").replace(/["'{}]/g, "").replace(/,/g, "&");
     Ajax.call(url, method, data, function(results) {
-        var token = results.sessionToken;
-        var username = results.username;
-        var email = results.email;
-        cookie.set('userId', results.objectId, 1);
-        cookie.set("username", username, 1);
-        cookie.set("email", email, 1);
-        cookie.set("sessionToken", token, 1);
+        userData.collect(results);
         Header.load("headerButtons", function() {
             App.loadClientModule("logOut");
             App.loadClientModule("viewProfile");
