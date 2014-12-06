@@ -41,7 +41,8 @@ $(document).ready(function() {
         "checkLoggedIn",
         "viewProfile",
         "collectUserData",
-        "fillUpUserProfile"
+        "fillUpUserProfile",
+        "Tags"
     ];
 
     for (var module in __coreModules) {

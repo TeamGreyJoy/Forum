@@ -7,8 +7,7 @@ function renderAnswer(el, answerData, date, backgroundCol) {
             $(el).find('.username').html("<a href='#' onclick=showProfile('" + data.objectId + "')>" + data.username + "</a>")
         })
     } else {
-        console.log(answerData.username);
-        $(el).find('.username').html("<b>" + answerData.username + "</b>" + " (guest)")
+        $(el).find('.username').html("<b>" + answerData.username + "</b>" + "   (guest)")
     }
     $(el).find('.text').text(answerData.text);
     $(el).find('.date').text('Created on : ' + date.toDateString());
