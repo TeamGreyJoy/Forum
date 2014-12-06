@@ -8,6 +8,7 @@ function logIn() {
     console.log(dataObj);
     var data = JSON.stringify(dataObj).replace(/:/g, "=").replace(/["'{}]/g, "").replace(/,/g, "&");
     Ajax.call(url, method, data, function(results) {
+        console.log(results)
         userData.collect(results);
         Header.load("headerButtons", function() {
             App.loadClientModule("logOut");

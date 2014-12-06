@@ -4,7 +4,7 @@ function renderAnswer(el, answerData, date, backgroundCol) {
 
     if (answerData.user) {
         Ajax.pull("https://api.parse.com/1/users/" + answerData.user.objectId, "GET", function(data) {
-            $(el).find('.username').html("<a href='#' onclick=showProfile('" + data.objectId + "')>" + data.username + "</a>")
+            $(el).find('.username').html("<a href='#' onclick=loadProfilePage('" + data.objectId + "')>" + data.username + "</a>")
         })
     } else {
         $(el).find('.username').html("<b>" + answerData.username + "</b>" + "   (guest)")

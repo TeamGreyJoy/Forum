@@ -1,7 +1,7 @@
 var App = (function($) {
     var SCRIPTS_FOLDER = 'app';
     var CORE_MODULES_FOLDER = 'core';
-    var CLIENT_MODULES_FOLDER = 'client'
+    var CLIENT_MODULES_FOLDER = 'client';
 
     var require = function(module, folder) {
         $("head").append('<script src="' + SCRIPTS_FOLDER + '/' + folder + '/' + module + '.js' + '"></script>')
