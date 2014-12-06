@@ -1,6 +1,15 @@
 function renderAnswer(el, answerData, date, backgroundCol) {
     $(el).parent().append($(el).clone(true));
     $(el).css('background-color',backgroundCol);
+
+    if (answerData.user) {
+        Ajax.pull("https://api.parse.com/1/users/" + answerData.user.objectId, "GET", function(data) {
+            $(el).find('.username').html("<a href='#' onclick=showProfile('" + data.objectId + "')>" + data.username + "</a>")
+        })
+    } else {
+        console.log(answerData.username);
+        $(el).find('.username').html("<b>" + answerData.username + "</b>" + " (guest)")
+    }
     $(el).find('.text').text(answerData.text);
     $(el).find('.date').text('Created on : ' + date.toDateString());
 }
@@ -35,6 +44,9 @@ function loadAnswers() {
                 var el = $(this);                
                 $(".textarea").load("templates/answers/add.html", function() {
                     App.loadClientModule("addAnswer");
+                    if (!(cookie.get('sessionToken'))) {
+                        $("#username").show();
+                    }
                     $("#questionId").attr('data-questionId', $(el).attr('data-id'));
                 });
             })
