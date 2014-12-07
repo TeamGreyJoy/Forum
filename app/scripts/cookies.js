@@ -14,7 +14,7 @@ var cookie = (function () {
   }
 
   function setCookie(name, value, expires, path, domain) {
-    var cookie = name + "=" + escape(value) + ";";
+    var cookie = name + "=" + encodeURI(value) + ";";
    
     if (expires) {
       if(expires instanceof Date) {
@@ -48,7 +48,7 @@ var cookie = (function () {
         }
         cookie = cookie.substring(j);
         if (cookie.startsWith(name + "=")) {
-            return cookie.split(/=([\w+@\w+.\w+/]+)/)[1];
+            return cookie.split(/=([\w+@\w+.\w+\/\:]+)/)[1];
         }
     }
   }

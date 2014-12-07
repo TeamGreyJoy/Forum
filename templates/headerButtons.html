@@ -1,10 +1,11 @@
 
 <div id="userSpace" class="signin-card-animation">
     <div>
-        <img src="resources/People.png">
+        <img src="resources/People.png" id="smallAvatar">
         <h3 id="greeting"></h3>
         <script>
             $('#greeting').text("Hello, " + cookie.get("username") + "!");
+            setAvatar();
         </script>
     </div>
     <button id="viewProfile" class="btn btn-block btn-default btn-info ripple-effect">View profile</button>

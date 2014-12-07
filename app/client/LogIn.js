@@ -13,6 +13,7 @@ function logIn() {
         Header.load("headerButtons", function() {
             App.loadClientModule("logOut");
             App.loadClientModule("viewProfile");
+            setAvatar();
         });
         loadCategories();
     });

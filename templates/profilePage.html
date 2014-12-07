@@ -5,7 +5,16 @@
 </script>
 <div id="container" class="signin-card-animation">
     <div class="image-container">
-        <img src="resources/People.png" alt="avatar"/>
+        <img src="resources/People.png" alt="avatar" id="avatarImage"/>
+        <div id="form-user-avatar" class="form-group">
+            <input id="avatar" class="form-control" name="avatar" value="" type="text" size="15" alt="avatar" required=""/>
+            <span class="form-highlight"></span>
+            <span class="form-bar"></span>
+            <label for="username" class="float-label">picture url</label>
+        </div>
+        <button class="btn btn-block btn-flat btn-danger ripple-effect" type="button" name="avatar" alt="avatar" id="addAvatar" onclick="changeAvatar();setTimeout(function(){
+            setAvatar();
+        },600)">change avatar</button>
     </div>
     <div class="userInfo">
         <form action="" method="post" class="" role="form" id="">

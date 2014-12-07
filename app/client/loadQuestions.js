@@ -53,7 +53,7 @@ function questionsLoad(categotyData, colors) {
     console.log("secondary Load");
     var category = categotyData;
      Ajax.pull('https://api.parse.com/1/classes/Question' +
-        '?where={"category":{"__type":"Pointer","className":"Categories","objectId":"' + 
+        '?where={"category":{"__type":"Pointer","className":"Categories","objectId":"' +
             category.objectId + '"}}', "GET", function(data) {
         Template.load('questionHTMLTemplate', function() {
             App.loadClientModule('loadAnswers');

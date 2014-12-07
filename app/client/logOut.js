@@ -11,5 +11,6 @@ $(document).ready(function(){
         cookie.delete("dateOfBirth");
         cookie.delete("skype");
         cookie.delete("facebook");
+        cookie.delete("avatarURL");
     })
 });

@@ -42,7 +42,9 @@ $(document).ready(function() {
         "viewProfile",
         "collectUserData",
         "fillUpUserProfile",
-        "Tags"
+        "Tags",
+        "changeAvatar",
+        "setAvatar"
     ];
 
     for (var module in __coreModules) {

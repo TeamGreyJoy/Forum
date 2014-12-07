@@ -48,6 +48,7 @@ body #wrapper>header #userSpace>div{
 body #wrapper>header #userSpace img{
     margin-left: 10%;
     width: 50px;
+    height: 50px;
     border: 4px #ffffff solid;
     background: #ffffff;
     border-radius: 50%;
