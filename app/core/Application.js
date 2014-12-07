@@ -35,7 +35,6 @@ $(document).ready(function() {
         "loadQuestions",
         "loadAnswers",
         "SignIn",
-        "SignUp",
         "SignUpFunc",
         "LogIn",
         "checkLoggedIn",

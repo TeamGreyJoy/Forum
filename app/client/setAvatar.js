@@ -10,7 +10,7 @@ function setAvatar(userId){
                 var avatarURL = results.results[0].url.split(/https*:\/\/(.*)/)[1];
                 setTimeout(function () {
                     avatar.attr('src', "https://" + avatarURL);
-                }, 200);
+                }, 100);
             } else{
                 return -1;
             }
