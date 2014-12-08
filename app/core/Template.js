@@ -34,6 +34,24 @@ var Aside = (function ($) {
 
 })(jQuery);
 
+var AsideRight = (function ($) {
+
+    var TEMPLATES_FOLDER = 'templates';
+
+    var load = function(template, callback) {
+        if (typeof (callback) == 'undefined') {
+            callback = function() { }
+        }
+
+        $("aside[class=rightAside]").load(TEMPLATES_FOLDER + '/' + template + '.html', callback);
+    };
+
+    return {
+        load: load
+    }
+
+})(jQuery);
+
 var Header = (function ($) {
 
     var TEMPLATES_FOLDER = 'templates';

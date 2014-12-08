@@ -1,0 +1,33 @@
+#tagsForm {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	border: none;
+	border-radius: 3px;
+	background-color: #4ECE4E;
+	margin: 3px;
+	padding: 3px;
+}
+#tagsForm > p,button {
+	color: #FFF;
+}
+#searchByTag {
+	height: 30px;
+	border: none;
+	border-radius: 3px;
+	background-color: #54D4D4;
+}
+#searchByTag:hover {
+	background-color: #68E7E7;
+}
+#ui-id-1 {
+	list-style: none;
+	border: 1px solid #000;
+	width: 50px;
+	border-radius: 2px;
+	text-align: left;
+}
+
+.ui-state-focus {
+	background-color: #CDCDCD;
+}
