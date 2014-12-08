@@ -1,12 +1,8 @@
 #tagsForm {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	border: none;
-	border-radius: 3px;
-	background-color: #4ECE4E;
-	margin: 3px;
-	padding: 3px;
+    float: left;
+    padding: 20px;
+    margin: 15px;
+    margin-top: 2%;
 }
 #tagsForm > p,button {
 	color: #FFF;
