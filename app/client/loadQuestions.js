@@ -1,7 +1,7 @@
 function newQuestionFormLoad(category, colors) {
-     Wrapper.load('newQuestion', function() {
+    Wrapper.load('newQuestion', function() {
         $('#addNewQuestion').click(function(){
-            $('#addNewQuestion').hide(); 
+            $('#addNewQuestion').hide();
             $('#categoryName').text(category.title);
             $('#newQuestionForm').show();
             $('#submitNewQuestion').click(function(){
@@ -15,28 +15,28 @@ function newQuestionFormLoad(category, colors) {
                     '"text": "'+cleanedText+'",'+
                     '"classType": "question",'+
                     '"autor": {'+
-                        '"__type":"Pointer",'+
-                        '"className":"_User",'+
-                        '"objectId":"'+userId+
+                    '"__type":"Pointer",'+
+                    '"className":"_User",'+
+                    '"objectId":"'+userId+
                     '"},'+
                     '"category": {'+
-                        '"__type":"Pointer",'+
-                        '"className":"Categories",'+
-                        '"objectId":"'+categoryId+
+                    '"__type":"Pointer",'+
+                    '"className":"Categories",'+
+                    '"objectId":"'+categoryId+
                     '"},'+
                     '"ACL":{"'+
-                        userId+'":{'+
-                            '"write":true,'+
-                            '"read":true'+
-                        '},'+
-                          '"*": {'+
-                            '"read":true'+
-                            '}'+
+                    userId+'":{'+
+                    '"write":true,'+
+                    '"read":true'+
+                    '},'+
+                    '"*": {'+
+                    '"read":true'+
                     '}'+
-                '}';
+                    '}'+
+                    '}';
                 Ajax.call('https://api.parse.com/1/classes/Question',
-                 'POST',
-                  postData, function(results){
+                    'POST',
+                    postData, function(results){
                         var data = {
                             question: {
                                 __type: "Pointer",
@@ -57,7 +57,7 @@ function newQuestionFormLoad(category, colors) {
                 questionsLoad(category, colors);
                 $('#newQuestionForm').hide();
                 $('#addNewQuestion').show();
-            });              
+            });
         });
         $('#cancelNewQuestion').click(function(){
             $('#newQuestionForm').hide();
@@ -69,32 +69,21 @@ function newQuestionFormLoad(category, colors) {
 function questionsLoad(categotyData, colors) {
     console.log("secondary Load");
     var category = categotyData;
-     Ajax.pull('https://api.parse.com/1/classes/Question' +
+    Ajax.pull('https://api.parse.com/1/classes/Question' +
         '?where={"category":{"__type":"Pointer","className":"Categories","objectId":"' +
-            category.objectId + '"}}', "GET", function(data) {
+        category.objectId + '"}}', "GET", function(data) {
         Template.load('questionHTMLTemplate', function() {
             App.loadClientModule('loadAnswers');
             for (var i = 0; i < data.results.length; i++) {
                 var backgroundCol = colors[Math.floor(Math.random() * 4) + 0];
                 var quData = data.results[i];
-                var date = new Date(quData.createdAt);
-                var el = $(".questionSection").last();
-                $(el).parent().append($(el).clone(true));
-                $(el).css('background-color',backgroundCol);
-                $(el).find('h2').css('cursor', 'pointer').text(quData.title)
-                .data('question', quData)
-                .click(loadAnswers);
-                $(el).find('.text').text(quData.text);
-                $(el).find('.date').text('Created on : ' + date.toDateString());
-                $(el).find('.category').text('category : ' + category.title);
                 Ajax.pull(
-                    'https://api.parse.com/1/classes/QuestionViews' +
-                    '?where={"question":{"__type":"Pointer","className":"Question","objectId":"' + quData.objectId + '"}}',
+                        'https://api.parse.com/1/classes/QuestionViews' +
+                        '?where={"question":{"__type":"Pointer","className":"Question","objectId":"' + quData.objectId + '"}}',
                     'GET',
                     function (views) {
-                        $(el).find('.views').text('views: ' + views.results[0].viewed);
                         Ajax.pull(
-                            'https://api.parse.com/1/classes/Question/' + views.results[0].question.objectId,
+                                'https://api.parse.com/1/classes/Question/' + views.results[0].question.objectId,
                             'GET',
                             function(quData) {
                                 var el = $(".questionSection").last();
@@ -110,20 +99,20 @@ function questionsLoad(categotyData, colors) {
                                 $(el).find('.views').text('views: ' + views.results[0].viewed);
                             }
                         )
-
                     }
                 )
             }
-            var childern = $('#content').children();
-            if(childern.length <= 1){
+            setTimeout(function(){
+                var childern = $('#content').children();
                 childern.last().remove();
-                Template.load('noQuestions');
-
-            } else{
-                childern.last().remove();
-            }
-        });   
-        newQuestionFormLoad(category, colors);    
+                if(childern.length <= 1){
+                    Template.load("noQuestions")
+                } else{
+                    childern.css('display', 'block');
+                }
+            },600);
+        });
+        newQuestionFormLoad(category, colors);
     });
 }
 
@@ -131,5 +120,5 @@ function loadQuestions(e){
     var colors = ['#4285F4', '#3F51B5', "#0F9D58", '#FF5722'];
     var category = $(this).data('category');
     console.log('Main Load');
-    questionsLoad(category, colors);   
+    questionsLoad(category, colors);
 }
