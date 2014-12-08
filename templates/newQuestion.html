@@ -1,6 +1,7 @@
 <link type="text/css" rel="stylesheet" href="css/newQuestion.css">
-<div id="newQuestion">
-	<div id="newQuestionForm">
+<script src="app/scripts/rippleEffect.js"></script>
+<div id="newQuestion" class="signin-card-animation">
+	<div id="newQuestionForm" class="signin-card-animation">
 		<h5>Question for category - <span id="categoryName"></span></h5>
 		<h5>Title</h5>
 		<input type="text" name="title" id="newQuestionTitle">
@@ -9,5 +10,5 @@
 		<button id="submitNewQuestion" class="btn btn-block btn-raised btn-info ripple-effect categoryItem" type="button">Submit</button>
 		<button id="cancelNewQuestion" class="btn btn-block btn-raised btn-info ripple-effect categoryItem" type="button">Cancel</button>
 	</div>
-	<button id="addNewQuestion" class="btn btn-block btn-raised btn-info ripple-effect categoryItem" type="button">Add New Question</button>
+    <button id="addNewQuestion" type="button" class="btn btn-circle btn-raised ripple-effect btn-danger btn-lg">+</button>
 </div>

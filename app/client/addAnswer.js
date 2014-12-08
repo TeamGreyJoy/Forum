@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $("#cancellAnswerAdd").click(function(){
-        $("#newAnswerDiv").hide();
-        $('.openAnswerBox').show();
+        $("#newAnswerDiv").css('display', 'none');
+        $('.openAnswerBox').css('display', 'block');
     });
     $("#addAnswer").click(function() {
         var data = {};
@@ -29,8 +29,8 @@ $(document).ready(function() {
             answerData.text = $("#answerText").val();
 
             renderAnswer(el, answerData, date, backgroundCol);
-            $("#newAnswerDiv").hide();
-            $('.openAnswerBox').show();
+            $("#newAnswerDiv").css('display', 'none');
+            $('.openAnswerBox').css('display', 'block');
         });
     });
 

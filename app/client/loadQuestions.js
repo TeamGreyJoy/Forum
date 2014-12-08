@@ -1,9 +1,10 @@
 function newQuestionFormLoad(category, colors) {
     Wrapper.load('newQuestion', function() {
         $('#addNewQuestion').click(function(){
-            $('#addNewQuestion').hide();
+            $('#addNewQuestion').css('display', 'none');
             $('#categoryName').text(category.title);
-            $('#newQuestionForm').show();
+            //$('#newQuestionForm').show();
+            $('#newQuestionForm').css('display', 'block');
             $('#submitNewQuestion').click(function(){
                 var categoryId = category.objectId;
                 var userId = cookie.get('userId');
@@ -36,32 +37,17 @@ function newQuestionFormLoad(category, colors) {
                     '}';
                 Ajax.call('https://api.parse.com/1/classes/Question',
                     'POST',
-                    postData, function(results){
-                        var data = {
-                            question: {
-                                __type: "Pointer",
-                                className: "Question",
-                                objectId: results.objectId
-                            },
-                            viewed: 0
-                        };
-
-                        Ajax.call(
-                            'https://api.parse.com/1/classes/QuestionViews',
-                            'POST',
-                            JSON.stringify(data),
-                            function(res){}, 'application/json', true
-                        )
-
-                    }, "application/json", true);
+                    postData, function(results){}, "application/json", true);
                 questionsLoad(category, colors);
-                $('#newQuestionForm').hide();
-                $('#addNewQuestion').show();
+                $('#newQuestionForm').css('display', 'none');
+                //$('#newQuestionForm').hide();
+                $('#addNewQuestion').css('display', 'block');
             });
         });
         $('#cancelNewQuestion').click(function(){
-            $('#newQuestionForm').hide();
-            $('#addNewQuestion').show();
+            //$('#newQuestionForm').hide();
+            $('#newQuestionForm').css('display', 'none');
+            $('#addNewQuestion').css('display', 'block');
         });
     });
 }
@@ -74,43 +60,29 @@ function questionsLoad(categotyData, colors) {
         category.objectId + '"}}', "GET", function(data) {
         Template.load('questionHTMLTemplate', function() {
             App.loadClientModule('loadAnswers');
+            console.log(data.results.length);
+            console.log(data);
             for (var i = 0; i < data.results.length; i++) {
                 var backgroundCol = colors[Math.floor(Math.random() * 4) + 0];
                 var quData = data.results[i];
-                Ajax.pull(
-                        'https://api.parse.com/1/classes/QuestionViews' +
-                        '?where={"question":{"__type":"Pointer","className":"Question","objectId":"' + quData.objectId + '"}}',
-                    'GET',
-                    function (views) {
-                        Ajax.pull(
-                                'https://api.parse.com/1/classes/Question/' + views.results[0].question.objectId,
-                            'GET',
-                            function(quData) {
-                                var el = $(".questionSection").last();
-                                var date = new Date(quData.createdAt);
-                                $(el).parent().append($(el).clone(true));
-                                $(el).css('background-color',backgroundCol);
-                                $(el).find('h2').css('cursor', 'pointer').text(quData.title)
-                                    .data('question', quData)
-                                    .click(loadAnswers);
-                                $(el).find('.text').text(quData.text);
-                                $(el).find('.date').text('Created on : ' + date.toDateString());
-                                $(el).find('.category').text('category : ' + category.title);
-                                $(el).find('.views').text('views: ' + views.results[0].viewed);
-                            }
-                        )
-                    }
-                )
+                var date = new Date(quData.createdAt);
+                var el = $(".questionSection").last();
+                $(el).parent().append($(el).clone(true));
+                $(el).css('background-color',backgroundCol);
+                $(el).find('h2').css('cursor', 'pointer').text(quData.title)
+                    .data('question', quData)
+                    .click(loadAnswers);
+                $(el).find('.text').text(quData.text);
+                $(el).find('.date').text('Created on : ' + date.toDateString());
+                $(el).find('.category').text('category : ' + category.title);
             }
-            setTimeout(function(){
-                var childern = $('#content').children();
-                childern.last().remove();
-                if(childern.length <= 1){
-                    Template.load("noQuestions")
-                } else{
-                    childern.css('display', 'block');
-                }
-            },600);
+            var childern = $('#content').children();
+            childern.last().remove();
+            if(childern.length <= 1){
+                Template.load("noQuestions")
+            } else {
+                childern.css('display', 'block');
+            }
         });
         newQuestionFormLoad(category, colors);
     });
