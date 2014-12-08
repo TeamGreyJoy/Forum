@@ -6,9 +6,9 @@ function newQuestionFormLoad(category, colors) {
             $('#newQuestionForm').show();
             $('#submitNewQuestion').click(function(){
                 var categoryId = category.objectId;
-                var userId = cookie.get('userId');
-                var questionTitle = $('#newQuestionTitle').val();
-                var questionText = $('#newQuestionText').val();
+                var userId = cookie.get('objectId');
+                var questionTitle = $('#newQuestionTitle').val();               
+                var questionText = $('#newQuestionText').val();                
                 var cleanedText = questionText.replace(/(\r\n|\n|\r)/gm,"\\r");
                 var postData = '{'+
                     '"title": "'+questionTitle+'",'+
@@ -34,10 +34,10 @@ function newQuestionFormLoad(category, colors) {
                             '}'+
                     '}'+
                 '}';
-                Ajax.call('https://api.parse.com/1/classes/Question',
+                Ajax.pushRegistred('https://api.parse.com/1/classes/Question',
                  'POST',
-                  postData, function(results){}, "application/json", true);
-                questionsLoad(category, colors);
+                  postData);           
+                questionsLoad(category, colors);    
                 $('#newQuestionForm').hide();
                 $('#addNewQuestion').show();
             });              
@@ -50,19 +50,17 @@ function newQuestionFormLoad(category, colors) {
 }
 
 function questionsLoad(categotyData, colors) {
-    console.log("secondary Load");
     var category = categotyData;
      Ajax.pull('https://api.parse.com/1/classes/Question' +
         '?where={"category":{"__type":"Pointer","className":"Categories","objectId":"' +
             category.objectId + '"}}', "GET", function(data) {
+                console.log(data);
         Template.load('questionHTMLTemplate', function() {
             App.loadClientModule('loadAnswers');
-            console.log(data.results.length);
-            console.log(data);
             for (var i = 0; i < data.results.length; i++) {
-                var backgroundCol = colors[Math.floor(Math.random() * 4) + 0];
-                var quData = data.results[i];
-                var date = new Date(quData.createdAt);
+                var backgroundCol = colors[Math.floor(Math.random() * 4) + 0];               
+                var quData = data.results[i];    
+                var date = new Date(quData.createdAt);           
                 var el = $(".questionSection").last();
                 $(el).parent().append($(el).clone(true));
                 $(el).css('background-color',backgroundCol);
@@ -78,11 +76,9 @@ function questionsLoad(categotyData, colors) {
     });
 }
 
-function loadQuestions(e){
+function loadQuestions(){
     var colors = ['#4285F4', '#3F51B5', "#0F9D58", '#FF5722'];
     var category = $(this).data('category');
     questionsLoad(category, colors);   
 }
-
-
 

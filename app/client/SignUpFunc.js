@@ -26,8 +26,7 @@ function signUp() {
             "https://api.parse.com/1/roles/NEmjNrb8Oe",
             "PUT",
             JSON.stringify(postdata),
-            function(){console.log("success")},
-            "application/json", false)
-
+            function(){logIn(username, passwd);},
+            "application/json", false);
     });
 }

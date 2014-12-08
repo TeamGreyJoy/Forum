@@ -1,0 +1,94 @@
+<div id="welcomeWrap" class="signin-card-animation">
+    <div id="welcomePage">
+        <h1 id="welcomePageGreeting" class="signin-card-animation">Welcome, user!</h1>
+        <h3 class="signin-card-animation">Ask your questions, get your answers!</h3>
+        <h4 class="signin-card-animation">Select a category.</h4>
+
+        <script>
+            $('#welcomePageGreeting').text("Welcome, " + cookie.get("username") + "!");
+        </script>
+    </div>
+</div>
+
+<style>
+    .hoveredCategory{
+        color: #fff;
+        background-color: #449d44;
+        border-color: #398439;
+    }
+    .hoveredh4{
+        transition: font-size 1s;
+        font-size: 3rem;
+    }
+</style>
+
+<script>
+    $(document).ready(function() {
+        var welcomeWrap = $('#welcomeWrap');
+
+        setTimeout(function () {
+            if(cookie.get('avatarURL')){
+                welcomeWrap.css({'background-image': 'url(https://' + cookie.get('avatarURL') + ')',
+                    'background-repeat': 'no-repeat',
+                    'background-size': 'cover'});
+            } else{
+                welcomeWrap.css({'background-image': 'url(resources/People.png)',
+                    'background-repeat': 'no-repeat',
+                    'background-size': 'contain',
+                    'background-position': '50% 0'});
+            }
+        }, 500);
+
+        $('#welcomePage>h4').hover(function () {
+            $(this).toggleClass('hoveredh4');
+            $('.categoryItem').toggleClass("hoveredCategory");
+        });
+
+        $('#welcomePage>h3').hover(function () {
+            $(this).toggleClass('hoveredh3');
+        });
+
+        $('#welcomePage>h1').hover(function () {
+            $(this).toggleClass('hoveredh1');
+        });
+    });
+//
+//        addSpan($('#welcomePage>h1'));
+//        changeColours($('#welcomePage>h1'));
+//
+//        addSpan($('#welcomePage>h3'));
+//        changeColours($('#welcomePage>h3'));
+//
+//        addSpan($('#welcomePage>h4'));
+//        changeColours($('#welcomePage>h4'));
+//    });
+//
+//
+//    function addSpan(element){
+//        element.each(function( index ) {
+//            var originalText = $(this).text();
+//            var newText = "";
+//            for (var i = 0; i < originalText.length; i++) {
+//                newText += "<span>" + originalText.charAt(i) + "</span>";
+//            }
+//            $(this).html(newText);
+//        });
+//    }
+//
+//    function changeColours(element) {
+//
+//        // COLOURS ARRAY
+//        var colours = Array("#1469EB", "#D94430", "#FFB801", "#156AEB", "#009A56", "#D33E29"), idx;
+//
+//        element.hover(function () {
+//            $(element).css( 'cursor', 'pointer' );
+//            $('span', this).each(function (index, character) {
+//                idx = Math.floor(Math.random() * colours.length);
+//                $(this).css("color", colours[idx]);
+//            });
+//
+//        }, function () {
+//            $('span', this).css("color", colours[idx]);
+//        });
+//    }
+</script>

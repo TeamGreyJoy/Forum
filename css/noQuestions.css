@@ -1,0 +1,13 @@
+#noQuestions{
+    margin: 10% auto;
+    text-align: center;
+    font-family: "Roboto", 'Helvetica Neue, Helvetica, Arial';
+}
+
+#noQuestions h2{
+    color: #E31D25;
+}
+
+#noQuestions img{
+    margin-top: 5%;
+}

@@ -11,29 +11,17 @@ var tagController = (function(){
           }
       });
   }
+  function getQuestionTags(questionId) {
+      Ajax.pull('https://api.parse.com/1/classes/QuestionTags' +
+      '?where={"question":{"__type":"Pointer","className":"Question","objectId":"' +
+      questionId + '"}}', "GET", function (data) {
+          for (var i in data.results) {
+              Ajax.pull("https://api.parse.com/1/classes/Tags/" + data.results[i].tag.objectId, "GET", function(data) {
 
-  function questionsLoad(data) {
-    Template.load('questionHTMLTemplate', function() {
-        App.loadClientModule('loadAnswers');
-        console.log(data.results.length);
-        console.log(data);
-        for (var i = 0; i < data.results.length; i++) {
-            var backgroundCol = colors[Math.floor(Math.random() * 4) + 0];
-            var quData = data.results[i];
-            var date = new Date(quData.createdAt);
-            var el = $(".questionSection").last();
-            $(el).parent().append($(el).clone(true));
-            $(el).css('background-color',backgroundCol);
-            $(el).find('h2').css('cursor', 'pointer').text(quData.title)
-            .data('question', quData)
-            .click(loadAnswers);
-            $(el).find('.text').text(quData.text);
-            $(el).find('.date').text('Created on : ' + date.toDateString());
-            $(el).find('.category').text('category : ' + category.title);
-        }
-    });   
-        //newQuestionFormLoad(category, colors);    
-}
+              })
+          }
+      });
+  }
 
   function getTagQuestions(tagId) {
       Ajax.pull('https://api.parse.com/1/classes/QuestionTags' +
@@ -44,7 +32,7 @@ var tagController = (function(){
           //         console.log(data.title);
           //     });
           // }
-          console.log(data);
+          console.log(data+"QUESTION TAGS");
       });
   }
 
@@ -103,6 +91,8 @@ var tagController = (function(){
     getAllTags: getAllTags
   };
 }());
+
+
 (function(){
   tagController.getAllTags();
   var tags = JSON.parse(sessionStorage.tags);

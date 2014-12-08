@@ -1,7 +1,7 @@
 #tagsForm {
 	position: absolute;
-	top: 100;
-	right: 100;
+	top: 0px;
+	left: 0px;
 	border: none;
 	border-radius: 3px;
 	background-color: #4ECE4E;
@@ -27,12 +27,7 @@
 	border-radius: 2px;
 	text-align: left;
 }
-.ui-menu-item {
-	margin-left: 2px;
 
-}
 .ui-state-focus {
 	background-color: #CDCDCD;
-	padding-left: 0px;
-	left: 0;
 }

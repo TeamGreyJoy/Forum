@@ -1,0 +1,39 @@
+#welcomeWrap{
+    border-radius: 15%;
+    height: 100%;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+}
+
+#welcomePage{
+    color: #ffffff;
+    background:rgba(255,255,255,0.3);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-family: "Roboto", 'Helvetica Neue, Helvetica, Arial';
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+#welcomePage>h1{
+    transition: color 0.5s ease;
+    font-size: 6rem;
+    margin-top: 20%;
+}
+
+#welcomePage>h1:hover{
+    color: #5BC0DE;
+    transition: font-size 1s;
+    font-size: 7rem;
+}
+
+#welcomePage>h3{
+    transition: color 0.5s ease;
+    font-size: 3rem;
+    margin-top: 20%;
+}
+
+#welcomePage>h3:hover{
+    color: #D9534F;
+    transition: font-size 1s;
+    font-size: 4rem;
+}
