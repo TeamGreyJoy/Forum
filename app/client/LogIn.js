@@ -1,9 +1,9 @@
-function logIn() {
+function logIn(username, passwd) {
 
     var url = "https://api.parse.com/1/login";
     var method = "GET";
-    var username = $('#username').val();
-    var passwd = $('#passwd').val();
+    var username = username ? username : $('#username').val();
+    var passwd = passwd ? passwd : $('#passwd').val();
     var dataObj = {'username': username, 'password': passwd};
     console.log(dataObj);
     var data = JSON.stringify(dataObj).replace(/:/g, "=").replace(/["'{}]/g, "").replace(/,/g, "&");
@@ -13,8 +13,9 @@ function logIn() {
         Header.load("headerButtons", function() {
             App.loadClientModule("logOut");
             App.loadClientModule("viewProfile");
+            loadCategories();
+            Template.load("welcomePage");
             setAvatar();
         });
-        loadCategories();
     });
 }

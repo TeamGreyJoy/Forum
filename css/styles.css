@@ -56,11 +56,12 @@ body #wrapper>header #userSpace img{
 }
 
 body #wrapper>header #userSpace h3{
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: #ffffff;
     padding: 1px;
     margin-left: 5%;
     display: inline-block;
+    padding-left: 5%;
 }
 
 body #wrapper>header #userSpace button{
@@ -114,6 +115,7 @@ body #wrapper>main>header>h2{
 }
 
 body #wrapper>main #content{
+    height: auto;
     padding: 30px;
 }
 
@@ -183,12 +185,4 @@ body footer{
 #welcome>header>h2{
     padding: 30px;
     text-shadow: 1px 1px 10px #5264AE;
-}
-
-.signin-card-animation {
-    -webkit-animation: cardEnter 0.75s ease-in-out 0.5s;
-    animation: cardEnter 0.75s ease-in-out 0.5s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    opacity: 0;
 }

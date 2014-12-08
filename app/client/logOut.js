@@ -12,5 +12,6 @@ $(document).ready(function(){
         cookie.delete("skype");
         cookie.delete("facebook");
         cookie.delete("avatarURL");
+        location.reload();
     })
 });
