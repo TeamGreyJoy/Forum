@@ -74,27 +74,32 @@ function questionsLoad(categotyData, colors) {
             category.objectId + '"}}', "GET", function(data) {
         Template.load('questionHTMLTemplate', function() {
             App.loadClientModule('loadAnswers');
-            console.log(data.results.length);
-            console.log(data);
             for (var i = 0; i < data.results.length; i++) {
                 var backgroundCol = colors[Math.floor(Math.random() * 4) + 0];
                 var quData = data.results[i];
-                var date = new Date(quData.createdAt);
                 Ajax.pull(
                     'https://api.parse.com/1/classes/QuestionViews' +
                     '?where={"question":{"__type":"Pointer","className":"Question","objectId":"' + quData.objectId + '"}}',
                     'GET',
                     function (views) {
-                        var el = $(".questionSection").last();
-                        $(el).parent().append($(el).clone(true));
-                        $(el).css('background-color',backgroundCol);
-                        $(el).find('h2').css('cursor', 'pointer').text(quData.title)
-                            .data('question', quData)
-                            .click(loadAnswers);
-                        $(el).find('.text').text(quData.text);
-                        $(el).find('.date').text('Created on : ' + date.toDateString());
-                        $(el).find('.category').text('category : ' + category.title);
-                        $(el).find('.views').text('views: ' + views.results[0].viewed);
+                        Ajax.pull(
+                            'https://api.parse.com/1/classes/Question/' + views.results[0].question.objectId,
+                            'GET',
+                            function(quData) {
+                                var el = $(".questionSection").last();
+                                var date = new Date(quData.createdAt);
+                                $(el).parent().append($(el).clone(true));
+                                $(el).css('background-color',backgroundCol);
+                                $(el).find('h2').css('cursor', 'pointer').text(quData.title)
+                                    .data('question', quData)
+                                    .click(loadAnswers);
+                                $(el).find('.text').text(quData.text);
+                                $(el).find('.date').text('Created on : ' + date.toDateString());
+                                $(el).find('.category').text('category : ' + category.title);
+                                $(el).find('.views').text('views: ' + views.results[0].viewed);
+                            }
+                        )
+
                     }
                 )
             }
