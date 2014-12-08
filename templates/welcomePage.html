@@ -16,6 +16,10 @@
         background-color: #449d44;
         border-color: #398439;
     }
+    .hoveredh4{
+        transition: font-size 1s;
+        font-size: 3rem;
+    }
 </style>
 
 <script>
@@ -36,7 +40,16 @@
         }, 500);
 
         $('#welcomePage>h4').hover(function () {
+            $(this).toggleClass('hoveredh4');
             $('.categoryItem').toggleClass("hoveredCategory");
+        });
+
+        $('#welcomePage>h3').hover(function () {
+            $(this).toggleClass('hoveredh3');
+        });
+
+        $('#welcomePage>h1').hover(function () {
+            $(this).toggleClass('hoveredh1');
         });
     });
 //

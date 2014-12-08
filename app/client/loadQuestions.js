@@ -74,8 +74,8 @@ function questionsLoad(categotyData, colors) {
             category.objectId + '"}}', "GET", function(data) {
         Template.load('questionHTMLTemplate', function() {
             App.loadClientModule('loadAnswers');
-            console.log(data.results.length);
-            console.log(data);
+//            console.log(data.results.length);
+//            console.log(data);
             for (var i = 0; i < data.results.length; i++) {
                 var backgroundCol = colors[Math.floor(Math.random() * 4) + 0];
                 var quData = data.results[i];
@@ -98,6 +98,14 @@ function questionsLoad(categotyData, colors) {
                         $(el).find('.views').text('views: ' + views.results[0].viewed);
                     }
                 )
+            }
+            var childern = $('#content').children();
+            if(childern.length <= 1){
+                childern.last().remove();
+                Template.load('noQuestions');
+
+            } else{
+                childern.last().remove();
             }
         });   
         newQuestionFormLoad(category, colors);    

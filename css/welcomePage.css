@@ -22,6 +22,8 @@
 
 #welcomePage>h1:hover{
     color: #5BC0DE;
+    transition: font-size 1s;
+    font-size: 7rem;
 }
 
 #welcomePage>h3{
@@ -32,4 +34,6 @@
 
 #welcomePage>h3:hover{
     color: #D9534F;
+    transition: font-size 1s;
+    font-size: 4rem;
 }
