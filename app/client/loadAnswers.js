@@ -1,3 +1,18 @@
+function viewQuestion(questionId) {
+    Ajax.pull('https://api.parse.com/1/classes/QuestionViews/' +
+    '?where={"question":{"__type":"Pointer","className":"Question","objectId":"' + questionId + '"}}', 'GET', function(data) {
+        var toUpdate = {};
+        toUpdate.viewed = data.results[0].viewed + 1;
+
+        Ajax.call(
+            'https://api.parse.com/1/classes/QuestionViews/' + data.results[0].objectId,
+            'PUT',
+            JSON.stringify(toUpdate),
+            function() { }
+        );
+    });
+}
+
 function renderAnswer(el, answerData, date, backgroundCol) {
     $(el).parent().append($(el).clone(true));
     $(el).css('background-color',backgroundCol);
@@ -19,7 +34,10 @@ function loadAnswers() {
     var backgroundCol = colors[Math.floor(Math.random() * 4) + 0];
     Ajax.pull('https://api.parse.com/1/classes/Answer' +
         '?where={"question":{"__type":"Pointer","className":"Question","objectId":"' + 
-            question.objectId + '"}}', "GET", function(data) {    	
+            question.objectId + '"}}', "GET", function(data) {
+
+        viewQuestion(question.objectId);
+
         Template.load("answer", function() {
             var quData = question;
             var date = new Date(quData.createdAt);

@@ -4,7 +4,7 @@ function getQuestionTags(questionId) {
     questionId + '"}}', "GET", function (data) {
         for (var i in data.results) {
             Ajax.pull("https://api.parse.com/1/classes/Tags/" + data.results[i].tag.objectId, "GET", function(data) {
-                console.log(data.name);
+
             })
         }
     });

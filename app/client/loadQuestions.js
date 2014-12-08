@@ -36,7 +36,24 @@ function newQuestionFormLoad(category, colors) {
                 '}';
                 Ajax.call('https://api.parse.com/1/classes/Question',
                  'POST',
-                  postData, function(results){}, "application/json", true);
+                  postData, function(results){
+                        var data = {
+                            question: {
+                                __type: "Pointer",
+                                className: "Question",
+                                objectId: results.objectId
+                            },
+                            viewed: 0
+                        };
+
+                        Ajax.call(
+                            'https://api.parse.com/1/classes/QuestionViews',
+                            'POST',
+                            JSON.stringify(data),
+                            function(res){}, 'application/json', true
+                        )
+
+                    }, "application/json", true);
                 questionsLoad(category, colors);
                 $('#newQuestionForm').hide();
                 $('#addNewQuestion').show();
@@ -72,6 +89,15 @@ function questionsLoad(categotyData, colors) {
                 $(el).find('.text').text(quData.text);
                 $(el).find('.date').text('Created on : ' + date.toDateString());
                 $(el).find('.category').text('category : ' + category.title);
+
+                Ajax.pull(
+                    'https://api.parse.com/1/classes/QuestionViews' +
+                    '?where={"question":{"__type":"Pointer","className":"Question","objectId":"' + quData.objectId + '"}}',
+                    'GET',
+                    function (views) {
+                        $(el).find('.views').text('views: ' + views.results[0].viewed);
+                    }
+                )
             }
         });   
         newQuestionFormLoad(category, colors);    
