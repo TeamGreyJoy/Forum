@@ -17,6 +17,7 @@ function loadCategories() {
                 $(el).click(loadQuestions);
             }
         });
+        AsideRight.load('tagForm');
     });
 }
 

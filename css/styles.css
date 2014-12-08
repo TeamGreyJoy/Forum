@@ -160,6 +160,10 @@ body #wrapper main #content section header h3 div.actionButtonContainter{
     z-index: 1;
 }
 
+body #wrapper > .rightAside {
+    float: left;
+}
+
 body footer{
     position: relative;
     width: 85%;

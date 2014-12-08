@@ -81,6 +81,8 @@ function questionsLoad(categotyData, colors) {
 function loadQuestions(e){
     var colors = ['#4285F4', '#3F51B5', "#0F9D58", '#FF5722'];
     var category = $(this).data('category');
-    console.log('Main Load');
     questionsLoad(category, colors);   
 }
+
+
+

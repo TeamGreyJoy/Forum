@@ -43,7 +43,7 @@ $(document).ready(function() {
         "fillUpUserProfile",
         "Tags",
         "changeAvatar",
-        "setAvatar"
+        "setAvatar",
     ];
 
     for (var module in __coreModules) {
