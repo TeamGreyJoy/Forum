@@ -55,7 +55,7 @@ function loadAnswers() {
                 var el = $(".answer").last();
                 renderAnswer(el, answerData, date, backgroundCol);
             }
-
+            $('#answers').children().last().remove();
             $(".openAnswerBox").click(function() {
                 $('.openAnswerBox').hide();
                 var el = $(this);                
