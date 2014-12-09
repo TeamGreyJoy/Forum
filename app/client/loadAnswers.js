@@ -34,7 +34,7 @@ function loadAnswers() {
     var backgroundCol = colors[Math.floor(Math.random() * 4) + 0];
     Ajax.pull('https://api.parse.com/1/classes/Answer' +
         '?where={"question":{"__type":"Pointer","className":"Question","objectId":"' + 
-            question.objectId + '"}}', "GET", function(data) {
+            question.objectId + '"}}&order=-createdAt', "GET", function(data) {
 
         viewQuestion(question.objectId);
 
