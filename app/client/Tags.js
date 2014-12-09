@@ -32,7 +32,6 @@ var tagController = (function(){
           //         console.log(data.title);
           //     });
           // }
-          console.log(data+"QUESTION TAGS");
       });
   }
 

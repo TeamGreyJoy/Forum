@@ -53,15 +53,12 @@ function newQuestionFormLoad(category, colors) {
 }
 
 function questionsLoad(categotyData, colors) {
-    console.log("secondary Load");
     var category = categotyData;
     Ajax.pull('https://api.parse.com/1/classes/Question' +
         '?where={"category":{"__type":"Pointer","className":"Categories","objectId":"' +
-        category.objectId + '"}}', "GET", function(data) {
+        category.objectId + '"}}&order=-createdAt', "GET", function(data) {
         Template.load('questionHTMLTemplate', function() {
             App.loadClientModule('loadAnswers');
-            console.log(data.results.length);
-            console.log(data);
             for (var i = 0; i < data.results.length; i++) {
                 var backgroundCol = colors[Math.floor(Math.random() * 4) + 0];
                 var quData = data.results[i];
@@ -93,6 +90,5 @@ function questionsLoad(categotyData, colors) {
 function loadQuestions(e){
     var colors = ['#4285F4', '#3F51B5', "#0F9D58", '#FF5722'];
     var category = $(this).data('category');
-    console.log('Main Load');
     questionsLoad(category, colors);
 }
