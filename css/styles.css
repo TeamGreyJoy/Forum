@@ -120,13 +120,14 @@ body #wrapper>main #content{
 }
 
 body #wrapper>main #content section{
+    border-radius: 20px;
     display: inline-block;
     width: 93%;
     padding: 10px 16px;
     margin: 0 auto;
     margin-bottom: 25px;
     height: auto;
-    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.3);
     color: #F1F1F1;
     background-color: white;
     position: relative;
@@ -144,26 +145,42 @@ body #wrapper>main #content section header{
 }
 
 body #wrapper>main #content section header h2{
+    padding: 5px;
+    color: #F1F1F1;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin-left: 15px;
     display: inline-block;
     position: relative;
     width: 90%;
     font-weight: normal;
 }
 
-body #wrapper>main #content section header h3{
+body #wrapper>main #content section header h2:hover{
     display: inline-block;
-    position: absolute;
-}
-
-body #wrapper main #content section header h3 div.actionButtonContainter{
     position: relative;
-    bottom: 90px;
-    left: 25px;
-    z-index: 1;
+    width: 90%;
+    font-weight: normal;
+    text-decoration: underline;
 }
 
-.rightAside {
-    float: left;
+#questionBody{
+    width: 100%;
+    padding: 5px;
+    margin-left: 15px;
+    position: relative;
+}
+
+#questionBody p{
+    text-align: left;
+}
+
+#questionInfo p, h4{
+    width: 33%;
+    display: inline-block;
+}
+
+#questionInfo  h4{
+    text-align: right;
 }
 
 body footer{
@@ -175,18 +192,30 @@ body footer{
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.07);
 }
 
-
-#welcome{
-    margin: 0 auto;
-    position: relative;
-    width: 50%;
-    background-color: #ffffff;
-    color: #5264AE;
-    text-align: center;
-    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.5);
-}
-
 #welcome>header>h2{
     padding: 30px;
     text-shadow: 1px 1px 10px #5264AE;
+}
+
+.error{
+
+    border-bottom: 3px solid red !important;
+}
+
+.hiddenMsg{
+    display: none;
+}
+
+.showMsg{
+    color: #ffffff;
+    z-index: 50;
+    display: block;
+    padding: 20px;
+    border-radius: 20px;
+    top: 35%;
+    left: 39%;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.5);
+    position: absolute;
+    background: red;
+    font-size: 2.2rem;
 }

@@ -24,3 +24,47 @@
     left: 300px;
     width: 624px;;
 }
+
+#addAnswerBtn{
+    left: 75% !important;
+}
+
+.answer{
+    border-radius: 20px;
+    display: inline-block;
+    width: 93%;
+    padding: 10px 16px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    height: auto;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.3);
+    color: #F1F1F1;
+    background-color: white;
+    position: relative;
+    -webkit-transition: box-shadow 400ms; /* For Safari 3.1 to 6.0 */
+    transition: box-shadow 400ms;
+}
+
+.username{
+    padding-left: 20px;
+    margin-right: 10px;
+    color: white;
+    text-align: left;
+}
+
+.username a{
+    font-size: 2rem;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.text{
+    padding-left: 20px;
+    text-align: left;
+    font-size: 1.6rem;
+    color: #dddddd;
+}
+
+.date{
+    text-align: right;
+}

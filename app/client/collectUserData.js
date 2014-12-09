@@ -1,6 +1,6 @@
 var userData = (function(){
     function collect(results){
-        cookie.delete('sessionToken');
+        //cookie.delete('sessionToken');
         if(!(cookie.get('sessionToken'))){
             var token = results.sessionToken;
             cookie.set("sessionToken", token, 1);

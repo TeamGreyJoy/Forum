@@ -1,29 +1,42 @@
 #tagsForm {
     float: left;
+    position: absolute;
+    top: 3%;
     padding: 20px;
-    margin: 15px;
-    margin-top: 2%;
-}
-#tagsForm > p,button {
-	color: #FFF;
-}
-#searchByTag {
-	height: 30px;
-	border: none;
-	border-radius: 3px;
-	background-color: #54D4D4;
-}
-#searchByTag:hover {
-	background-color: #68E7E7;
-}
-#ui-id-1 {
-	list-style: none;
-	border: 1px solid #000;
-	width: 50px;
-	border-radius: 2px;
-	text-align: left;
+    width: 30%;
 }
 
-.ui-state-focus {
-	background-color: #CDCDCD;
+#tagsForm #form-tags{
+    display: inline-block;
+}
+
+#tagsForm>input{
+    background-color: #ffffff;
+}
+
+#tagsForm>button{
+    background-image: url('../resources/Search.png');
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: 7px 8px;
+    display: inline-block;
+}
+ul{
+    list-style: none;
+    position: absolute !important;
+}
+ul :last-child{
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+li{
+    padding: 12px;
+    background: #5ABFDE;
+}
+li:hover{
+    cursor: pointer;
+    background: #03A9F4;
+}
+.ui-helper-hidden-accessible{
+    display: none !important;
 }

@@ -1,15 +1,19 @@
 <link type="text/css" rel="stylesheet" href="css/newAnswer.css">
 <div id="answers">
-	<section class="questionSection signin-card-animation">
-	    <header>
-	        <h2>
-	        </h2>
-	    </header>
-	    <body>
-	    	<p class="text"></p>
-	    </body> 	
-	        <p class="date"></p> 
-	</section>
+    <section class="questionSection signin-card-animation">
+        <header>
+            <h2></h2>
+        </header>
+        <div id="questionBody">
+            <p class="text"></p>
+            <p class="tags"></p>
+        </div>
+        <div id="questionInfo">
+            <p class="date"></p>
+            <p class="views"></p>
+            <h4 class="category"></h4>
+        </div>
+    </section>
     <div class="answer signin-card-animation" data-placeholder="true">
         <p class="username"></p>
         <p class="text"></p>
@@ -18,6 +22,6 @@
 </div>
 <div class="textarea">
 </div>
-<button type="button" class="btn btn-circle btn-raised ripple-effect btn-warning btn-lg openAnswerBox">+</button>
+<button type="button" class="btn btn-circle btn-raised ripple-effect btn-warning btn-lg openAnswerBox signin-card-animation" id="addAnswerBtn">+</button>
 
 

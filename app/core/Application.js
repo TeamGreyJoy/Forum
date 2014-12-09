@@ -44,6 +44,8 @@ $(document).ready(function() {
         "Tags",
         "changeAvatar",
         "setAvatar",
+        "loadTagSearch",
+        "Tags"
     ];
 
     for (var module in __coreModules) {

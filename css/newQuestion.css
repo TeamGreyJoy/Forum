@@ -1,4 +1,6 @@
-
+#addNewQuestion{
+    left: 180% !important;
+}
 #newQuestion {
     bottom: 154px;
     left: 300px;

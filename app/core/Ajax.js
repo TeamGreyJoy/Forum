@@ -4,7 +4,7 @@ var Ajax = (function ($) {
     var PARSE_APP_ID = "QFDHAYIxgeNrofyDI6kABUANT5QLOU0czweGbM0E";
     var PARSE_REST_KEY = "yZ9U8A0vlHViGVwmlL85cPrADPtBy3DTnuYj2VfP";
 
-    var call = function(url, method, data, callback, contentType, sessionToken) {
+    var call = function(url, method, data, callback, contentType, sessionToken, errorCallback) {
         if(!contentType){
             contentType = "application/json";
         }
@@ -24,6 +24,8 @@ var Ajax = (function ($) {
             url: url
         }).done(function(results){
             callback(results);
+        }).fail(function(error){
+            errorCallback(error)
         });
     }
 

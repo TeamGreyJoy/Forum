@@ -76,13 +76,15 @@ function questionsLoad(categotyData, colors) {
                 $(el).find('.date').text('Created on : ' + date.toDateString());
                 $(el).find('.category').text('category : ' + category.title);
             }
-            var childern = $('#content').children();
-            childern.last().remove();
-            if(childern.length <= 1){
-                Template.load("noQuestions")
-            } else {
-                childern.css('display', 'block');
-            }
+            setTimeout(function(){
+                var childern = $('#content').children();
+                childern.last().remove();
+                if(childern.length <= 1){
+                    Template.load("noQuestions")
+                } else {
+                    childern.css('display', 'block');
+                }
+            },250);
         });
         newQuestionFormLoad(category, colors);
     });

@@ -13,9 +13,13 @@
 
 </div>
 <link type="text/css" rel="stylesheet" href="css/tags.css">
-<div id="tagsForm" >
-    <p>Search Question By Tag</p>
-    <input id="tags" size="20">
-    <button id="searchByTag">Search</button>
+<div id="tagsForm" class="signin-card-animation">
+    <div id="form-tags" class="form-group">
+        <input id="tags" class="form-control" name="tags" type="text" size="25" alt="login" style="border-bottom: 1px solid rgb(236, 241, 82)"/>
+        <span class="form-highlight"></span>
+        <span class="form-bar"></span>
+        <label for="tags" class="float-label" style="color: #5BC0DE">Search</label>
+    </div>
+    <button type="button" class="btn btn-circle ripple-effect btn-raised btn-info" id="searchByTag"></button>
     <script src="app/client/Tags.js"></script>
 </div>

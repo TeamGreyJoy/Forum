@@ -113,6 +113,6 @@ var tagController = (function(){
         tagController.getTagQuestions(selectedTagId);
       }
     }
-  }); 
+  });
 }());
 
